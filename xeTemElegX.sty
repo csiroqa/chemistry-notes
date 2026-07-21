@@ -1,0 +1,95 @@
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{xeTemElegX}[2026/02/03 v1.0 font settings for xelatex]  
+
+\RequirePackage{amssymb, amsfonts}
+\RequirePackage[no-math]{fontspec}
+\RequirePackage[UTF8, fontset=none]{ctex}
+\xeCJKsetup{AutoFallBack=true, space=auto}
+  % \setmainfont{Latin Modern Roman}%
+  % \setsansfont{Latin Modern Sans}%
+  % \setmonofont{Latin Modern Mono}%
+  % \setmathfont{Latin Modern Math}%
+  % \setmathfont{XITS Math}[range={scr, bfscr}]%
+%
+\setmainfont[%
+  ItalicFont=NewCM10-Italic.otf,%
+  BoldFont=NewCM10-Bold.otf,%
+  BoldItalicFont=NewCM10-BoldItalic.otf,%
+  SmallCapsFeatures={Numbers=OldStyle},
+  RawFeature=+dlig]{NewCM10-Regular.otf}
+%
+\newfontfamily\sanskrittext[%
+  Script=Devanagari,%
+  Language=Sanskrit,%
+  BoldFont=NewCM10Devanagari-Bold.otf
+  ]{NewCM10Devanagari-Regular.otf}%
+% 
+\newfontfamily\newcmgreekguillemots[CharacterVariant=4]{NewCM10-Regular.otf}
+\newfontfamily\newcmrussianguillemots[CharacterVariant=3]{NewCM10-Regular.otf}
+\newfontfamily\showtiefont[CharacterVariant=5]{NewCM10-Regular.otf}
+\newfontfamily\ipafont[StylisticSet=5,ItalicFont=NewCM10-Italic]{NewCM10-Regular.otf}
+\newfontfamily\greek[CharacterVariant=4,StylisticSet=7]{NewCM10-Regular.otf}%middlegreekon
+\newcommand\lgrquotes{\char"201C}
+\newfontfamily\greeksans[CharacterVariant=4,StylisticSet=6,StylisticSet=7]{NewCMSans10-Regular.otf}%middlegreeksans
+\newcommand\rgrquotes{\char"201E}
+\newfontfamily\russian[CharacterVariant=3]{NewCM10-Regular.otf}%middlegreekon
+\newfontfamily\russiansans[CharacterVariant=3]{NewCMSans10-Regular.otf}%middlegreeksans
+\newfontfamily{\textca}[BoldFont=NewCMSans10-Bold.otf,%
+  ItalicFont=NewCMSans10-Oblique.otf]{NewCMSans10-Regular.otf}
+%
+\setsansfont[%
+  ItalicFont=NewCMSans10-Oblique.otf,%
+  BoldFont=NewCMSans10-Bold.otf,%
+  BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+  SmallCapsFeatures={Numbers=OldStyle}]{NewCMSans10-Regular.otf}
+%
+\setmonofont[%
+  ItalicFont=NewCMMono10-Italic.otf,%
+  BoldFont=NewCMMono10-Bold.otf,%
+  BoldItalicFont=NewCMMono10-BoldOblique.otf,%
+  SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
+
+\renewcommand{\TeX}{T\kern-.5ex\raisebox{-.5ex}{E}\kern-.4exX}
+\renewcommand{\LaTeX}{L\kern-.8ex\raisebox{.6ex}{\textsc{a}}\kern-.3ex\TeX}
+\newcommand{\XeLaTeX}{X\kern-.45ex\raisebox{-.5ex}{\reflectbox{E}}\kern-.4ex\LaTeX}
+\newcommand{\LuaLaTeX}{Lua\LaTeX}
+%
+  % \setmathfont{NewCMMath-Regular.otf}
+%
+%  \setmainfont{XITS}
+%  \setmathfont{XITS Math}
+%  \setmathfont[range=\mathbb]{TeX Gyre Termes Math}
+%  \setsansfont{Source Sans 3}
+%  \setmonofont{Iosevka Fixed Slab}[ItalicFont=霞鹜文楷等宽 GB Light]
+\setCJKmainfont{思源宋体 Light}[BoldFont=思源宋体 SemiBold, ItalicFont=霞鹜文楷 GB Light]%
+\setCJKsansfont{思源黑体 Light}[BoldFont=思源黑体 Medium]%
+\setCJKmonofont{等距更纱黑体 Slab SC}%
+\newfontfamily\gentium{Gentium Plus}%
+\newfontfamily\genbook{Gentium Book Plus}%
+\newfontfamily\sserif{Source Serif 4}%
+\newfontfamily\ssans{Source Sans 3}%
+\newfontfamily\cascadia{Cascadia Mono}%
+\newfontfamily\sarasa{Sarasa Fixed Slab SC}%
+\newCJKfontfamily\song{思源宋体 Light}[BoldFont=思源宋体 SemiBold]%
+\newCJKfontfamily\xbs{思源宋体 ExtraLight} % 小标宋
+\newCJKfontfamily\bs{思源宋体} % 标宋
+\newCJKfontfamily\das{思源宋体 Medium} % 大宋
+\newCJKfontfamily\cus{思源宋体 Heavy} % 粗宋
+\newCJKfontfamily\hei{思源黑体 Light}[BoldFont=思源黑体 Medium]%
+\newCJKfontfamily\xih{思源黑体 ExtraLight} % 细黑
+\newCJKfontfamily\bh{思源黑体 Normal} % 标黑
+\newCJKfontfamily\dah{思源黑体} % 大黑
+\newCJKfontfamily\cuh{思源黑体 Heavy} % 粗黑
+\newCJKfontfamily\xik{霞鹜文楷 GB Light} % 细楷
+\newCJKfontfamily\kai{霞鹜文楷 GB} % 楷体
+\newCJKfontfamily\cuk{霞鹜文楷 GB Medium} % 粗楷
+\newCJKfontfamily\fzfs{FZFangSong-Z02} % 仿宋  建议不用于PDF中
+\newCJKfontfamily\fzss{FZShuSong-Z01} % 书宋    因为方正此四字体嵌入后
+\newCJKfontfamily\fzkt{FZKai-Z03} % 楷体         商业使用需要得到方正授权
+%思源宋体ExtraLight Light 不填   Medium SemiBold Heavy
+%思源黑体ExtraLight Light Normal 不填   Medium   Heavy
+%霞鹜文楷           Light 不填   Medium
+%\newfontfamily\re{Source Serif 4 Light}[BoldFont=Source Serif 4 SemiBold]
+%\newfontfamily\co{Source Sans 3 Light}[BoldFont=Source Sans 3]
+\newCJKfontfamily\cre{霞鹜文楷 GB Light}[BoldFont=霞鹜文楷 GB Medium] %Chinese reference
+\newCJKfontfamily\cco{思源黑体 Light}[BoldFont=思源黑体] %Chinese concept

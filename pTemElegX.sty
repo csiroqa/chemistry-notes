@@ -1,0 +1,125 @@
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{pTemElegX}[2025/08/25 v1.0 traditional font for uplatex]  
+
+\RequirePackage{kvoptions}
+\RequirePackage[uplatex,deluxe,jis2004]{otf}
+\RequirePackage{plext}       %   縱組顓用增强包
+\RequirePackage{plautopatch} %   為 pLaTeX 打補丁
+\plautopatchdisable{eso-pic}
+
+\RequirePackage{pxufont}
+
+\SetupKeyvalOptions{family=pTemElegX, prefix=pTemElegX@}
+\DeclareStringOption[2]{index}
+% \DeclareStringOption[sc]{style}
+% \DeclareVoidOption{jp}{\setkeys{pTemElegX}{style=jp}}
+% \DeclareVoidOption{kr}{\setkeys{pTemElegX}{style=kr}}
+% \DeclareVoidOption{sc}{\setkeys{pTemElegX}{style=sc}}
+% \DeclareVoidOption{tc}{\setkeys{pTemElegX}{style=tc}}
+% \DeclareVoidOption{hc}{\setkeys{pTemElegX}{style=hc}}
+% \DeclareBoolOption{hw}
+
+\ProcessKeyvalOptions{pTemElegX}
+
+% \def\pTemElegX@get@index#1{%
+%     \ifx#1jp
+%         \ifpTemElegX@hw :5:\else:0:\fi
+%     \else\ifx#1kr
+%         \ifpTemElegX@hw :6:\else:1:\fi
+%     \else\ifx#1sc
+%         \ifpTemElegX@hw :7:\else:2:\fi
+%     \else\ifx#1tc
+%         \ifpTemElegX@hw :8:\else:3:\fi
+%     \else\ifx#1hc
+%         \ifpTemElegX@hw :9:\else:4:\fi
+%     \else
+%         \ifpTemElegX@hw :7:\else:2:\fi
+%     \fi\fi\fi\fi\fi
+% }
+
+% \def\pTemElegX@index#1{\pTemElegX@get@index\pTemElegX@style}
+
+% dvipdfmx special の発行
+\AtBeginDvi{%% 当使用 umin10/utmin10 时，橫書参考 jy2x 字体要使用 ptex 映射方式 「H」
+\special{pdf:mapline uphminl-h unicode :\pTemElegX@index:SourceHanSerif-Light.ttc }%
+\special{pdf:mapline uphminr-h unicode :\pTemElegX@index:SourceHanSerif-Regular.ttc }%
+\special{pdf:mapline uphminb-h unicode :\pTemElegX@index:SourceHanSerif-Bold.ttc }%
+\special{pdf:mapline uphgothr-h unicode :\pTemElegX@index:SourceHanSans-Regular.ttc }%
+\special{pdf:mapline uphgothb-h unicode :\pTemElegX@index:SourceHanSans-Bold.ttc }%
+\special{pdf:mapline uphgotheb-h unicode :\pTemElegX@index:SourceHanSans-Heavy.ttc }%
+\special{pdf:mapline uphmgothr-h unicode :\pTemElegX@index:SourceHanSans-Medium.ttc }%
+\special{pdf:mapline uphminln-h unicode :\pTemElegX@index:SourceHanSerif-Light.ttc }%
+\special{pdf:mapline uphminrn-h unicode :\pTemElegX@index:SourceHanSerif-Regular.ttc }%
+\special{pdf:mapline uphminbn-h unicode :\pTemElegX@index:SourceHanSerif-Bold.ttc }%
+\special{pdf:mapline uphgothrn-h unicode :\pTemElegX@index:SourceHanSans-Regular.ttc }%
+\special{pdf:mapline uphgothbn-h unicode :\pTemElegX@index:SourceHanSans-Bold.ttc }%
+\special{pdf:mapline uphgothebn-h unicode :\pTemElegX@index:SourceHanSans-Heavy.ttc }%
+\special{pdf:mapline uphmgothrn-h unicode :\pTemElegX@index:SourceHanSans-Medium.ttc }%
+\special{pdf:mapline uphminl-v unicode :\pTemElegX@index:SourceHanSerif-Light.ttc -w 1 }%
+\special{pdf:mapline uphminr-v unicode :\pTemElegX@index:SourceHanSerif-Regular.ttc -w 1 }%
+\special{pdf:mapline uphminb-v unicode :\pTemElegX@index:SourceHanSerif-Bold.ttc -w 1 }%
+\special{pdf:mapline uphgothr-v unicode :\pTemElegX@index:SourceHanSans-Regular.ttc -w 1 }%
+\special{pdf:mapline uphgothb-v unicode :\pTemElegX@index:SourceHanSans-Bold.ttc -w 1 }%
+\special{pdf:mapline uphgotheb-v unicode :\pTemElegX@index:SourceHanSans-Heavy.ttc -w 1 }%
+\special{pdf:mapline uphmgothr-v unicode :\pTemElegX@index:SourceHanSans-Medium.ttc -w 1 }%
+\special{pdf:mapline uphminln-v unicode :\pTemElegX@index:SourceHanSerif-Light.ttc -w 1 }%
+\special{pdf:mapline uphminrn-v unicode :\pTemElegX@index:SourceHanSerif-Regular.ttc -w 1 }%
+\special{pdf:mapline uphminbn-v unicode :\pTemElegX@index:SourceHanSerif-Bold.ttc -w 1 }%
+\special{pdf:mapline uphgothrn-v unicode :\pTemElegX@index:SourceHanSans-Regular.ttc -w 1 }%
+\special{pdf:mapline uphgothbn-v unicode :\pTemElegX@index:SourceHanSans-Bold.ttc -w 1 }%
+\special{pdf:mapline uphgothebn-v unicode :\pTemElegX@index:SourceHanSans-Heavy.ttc -w 1 }%
+\special{pdf:mapline uphmgothrn-v unicode :\pTemElegX@index:SourceHanSans-Medium.ttc -w 1 }%
+}
+
+% \DeclareFontFamily{JY2}{pTemElegXSerif}{}
+% \DeclareFontShape{JY2}{pTemElegXSerif}{m}{n}{<->s*[0.962216] ot:\pTemElegX@serif@index}{}
+% \DeclareFontShape{JY2}{pTemElegXSerif}{bx}{n}{<->s*[0.962216] ot:\pTemElegX@serif@index}{}
+% \DeclareFontShape{JY2}{pTemElegXSerif}{m}{it}{<->s*[0.962216] ot:\pTemElegX@serif@index}{}
+% \DeclareRobustCommand\pTemElegXSerif{\kanjifamily{pTemElegXSerif}\selectfont}
+
+% \DeclareFontFamily{JY2}{pTemElegXSans}{}
+% \DeclareFontShape{JY2}{pTemElegXSans}{m}{n}{<->s*[0.962216] ot:\pTemElegX@sans@index}{}
+% \DeclareFontShape{JY2}{pTemElegXSans}{bx}{n}{<->s*[0.962216] ot:\pTemElegX@sans@index}{}
+% \DeclareFontShape{JY2}{pTemElegXSans}{m}{it}{<->s*[0.962216] ot:\pTemElegX@sans@index}{}
+% \DeclareRobustCommand\pTemElegXSans{\kanjifamily{pTemElegXSans}\selectfont}
+
+\DeclareFontFamily{JY2}{jlreq}{}
+\DeclareFontFamily{JT2}{jlreq}{}
+
+\DeclareFontShape{JY2}{jlreq}{m}{n}{<->s*[0.924690]ujlreq}{}
+\DeclareFontShape{JY2}{jlreq}{m}{it}{<->ssub*jlreq/m/n}{}
+\DeclareFontShape{JY2}{jlreq}{m}{sl}{<->ssub*jlreq/m/n}{}
+\DeclareFontShape{JY2}{jlreq}{m}{sc}{<->ssub*jlreq/m/n}{}
+\DeclareFontShape{JT2}{jlreq}{m}{n}{<->s*[0.924690]ujlreq-v}{}
+\DeclareFontShape{JT2}{jlreq}{m}{it}{<->ssub*jlreq/m/n}{}
+\DeclareFontShape{JT2}{jlreq}{m}{sl}{<->ssub*jlreq/m/n}{}
+\DeclareFontShape{JT2}{jlreq}{m}{sc}{<->ssub*jlreq/m/n}{}
+
+\DeclareRobustCommand\ujlreq{\kanjifamily{jlreq}\kanjiseries{m}\selectfont}
+
+\DeclareFontFamily{JY2}{jlreqg}{}
+\DeclareFontFamily{JT2}{jlreqg}{}
+
+\DeclareFontShape{JY2}{jlreqg}{m}{n}{<->s*[0.924690]ujlreqg}{}
+\DeclareFontShape{JY2}{jlreqg}{m}{it}{<->ssub*jlreqg/m/n}{}
+\DeclareFontShape{JY2}{jlreqg}{m}{sl}{<->ssub*jlreqg/m/n}{}
+\DeclareFontShape{JY2}{jlreqg}{m}{sc}{<->ssub*jlreqg/m/n}{}
+\DeclareFontShape{JT2}{jlreqg}{m}{n}{<->s*[0.924690]ujlreqg-v}{}
+\DeclareFontShape{JT2}{jlreqg}{m}{it}{<->ssub*jlreqg/m/n}{}
+\DeclareFontShape{JT2}{jlreqg}{m}{sl}{<->ssub*jlreqg/m/n}{}
+\DeclareFontShape{JT2}{jlreqg}{m}{sc}{<->ssub*jlreqg/m/n}{}
+
+\DeclareRobustCommand\ujlreqg{\kanjifamily{jlreqg}\kanjiseries{m}\selectfont}
+
+% 设置默认字体
+\AtBeginDocument{%
+    \mcfamily\ltseries
+    % \ujlreq
+}
+
+% \providecommand{\setminchofont}[2][]{\edef\pTemElegX@serif@index{}}
+% \providecommand{\setgothicfont}[2][]{\edef\pTemElegX@sans@index{}}
+
+\newcommand{\currentpTemElegXindex}{\pTemElegX@index}
+
+\endinput

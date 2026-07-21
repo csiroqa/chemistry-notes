@@ -1,0 +1,167 @@
+
+    \definecolor{leanblue}{RGB}{0,0,255}
+    \colorlet{keyword}{leanblue}
+    \colorlet{punct}{leanblue}
+
+    \definecolor{sorry}{RGB}{255,0,0}
+    \definecolor{comment}{RGB}{0,128,0}
+    \definecolor{string}{RGB}{163,21,21}
+    \definecolor{num}{RGB}{9,134,88}
+
+    \definecolor{thname}{RGB}{121,94,38}
+
+    \definecolor{background}{HTML}{EEEEEE}
+    \definecolor{delim}{RGB}{20,105,176}
+
+    \theoremstyle{definition}
+
+    \newtheorem{axiom}{\textbf{Axiom}}[section]
+    \NewDocumentEnvironment{axm}{omoo}
+    {
+        \begin{entry}{yellow-}{yellow+}
+            \begin{axiom}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{axm:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{axiom}
+        \end{entry}
+    }
+
+    \newtheorem{definition}{\textbf{Definition}}[subsection]
+    \NewDocumentEnvironment{dfn}{omoo}
+    {
+        \begin{entry}{green-}{green+}
+            \begin{definition}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{dfn:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{definition}
+        \end{entry}
+    }
+
+    \newtheorem{property}[definition]{\textbf{Property}}
+    \NewDocumentEnvironment{ppt}{omoo}
+    {
+        \begin{entry}{pink-}{pink+}
+            \begin{property}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{ppt:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{property}
+        \end{entry}
+    }
+
+    \newtheorem{lemma}[definition]{\textbf{Lemma}}
+    \NewDocumentEnvironment{lma}{omoo}
+    {
+        \begin{entry}{blue-}{blue+}
+            \begin{lemma}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{lma:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{lemma}
+        \end{entry}
+    }
+
+    \newtheorem{theorem}[definition]{\textbf{Theorem}}
+    \NewDocumentEnvironment{thm}{omoo}
+    {
+        \begin{entry}{blue-}{blue+}
+            \begin{theorem}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{thm:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{theorem}
+        \end{entry}
+    }
+
+    \newtheorem{corollary}[definition]{\textbf{Corollary}}
+    \NewDocumentEnvironment{crl}{omoo}
+    {
+        \begin{entry}{purple-}{purple+}
+            \begin{corollary}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{crl:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{corollary}
+        \end{entry}
+    }
+
+    \newtheorem*{myproof}{证明: \newline}
+    \newenvironment{prf}
+    {
+        \begin{entry}{grey-}{grey+}
+            \begin{myproof}
+    }
+    {
+            \end{myproof}
+        \end{entry}
+    }
+
+    \newtheorem{example}{\textbf{Example}}[subsection]
+    \NewDocumentEnvironment{xmp}{omoo}
+    {
+        \begin{entry}{purple-}{purple+}
+            \begin{example}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{xmp:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{example}
+        \end{entry}
+    }
+
+    \newtheorem{cexample}[example]{\textbf{Counterexample}}
+    \NewDocumentEnvironment{cxmp}{omoo}
+    {
+        \begin{entry}{red-}{red+}
+            \begin{cexample}
+                \textbf{#2\IfNoValueTF{#1}{}{\label{cxmp:#1}}\IfNoValueTF{#3}{}{\IfBlankTF{#3}{}{ (#3)}}}
+                \IfNoValueTF{#2}{}{\newline}
+    }
+    {
+            \end{cexample}
+        \end{entry}
+    }
+
+    \newtheorem{remark}[subsection]{\textbf{Remark}}
+    \NewDocumentEnvironment{rmk}{o}
+    {
+        \begin{entry}{orange-}{orange+}
+            \begin{remark}
+    }
+    {
+            \end{remark}
+        \end{entry}
+    }
+
+    \newtheorem{problem}{\textbf{Problem}}
+    \NewDocumentEnvironment{pbm}{o}
+    {
+        \begin{entry}{blue-}{blue+}
+            \IfNoValueTF{#1}{}{\setcounter{problem}{#1}\addtocounter{problem}{-1}}
+            \begin{problem}
+    }
+    {
+            \end{problem}
+        \end{entry}
+    }
+
+    \newtheorem*{solution}{\textbf{Solution}: \newline}
+    \newenvironment{slt}
+    {
+        \begin{entry}{grey-}{grey+}
+            \begin{solution}
+    }
+    {
+            \end{solution}
+        \end{entry}
+    }
+
+    % mostly from Fulcrum-Template@SJTU-AI4Math

@@ -1,0 +1,41 @@
+\usepackage[
+    geometry,
+    fancy,
+    font,
+    color,
+    graphicx,
+    table,
+    math,
+    phys,
+    chem,
+    env
+]{liTemElegXv2.4}
+\usepackage{xeTemElegX}
+\usepackage{TemElegXref}
+% \graphicspath{{../Pic/}{../figures/}{../images/}}
+% \raggedbottom
+\hypersetup{ %
+    pdftitle= {} , % PDFのタイトル
+    pdfauthor= {} , % PDFの作成者
+    pdfsubject = {},    % 主題
+    pdfkeywords = {},  %関鍵詞
+    pdfcreator  = {xeLaTeX with hyperref},    %工具
+    pdflang={zh-CN},
+    bookmarksdepth=3
+}
+\setcounter{secnumdepth}{3}  % 让 subsubsection 有编号
+\setcounter{tocdepth}{2}        % 目录只显示到 subsection
+\hypersetup{bookmarksdepth=3}   % PDF 书签显示到 subsubsection
+
+\newcommand{\cemh}[1]{\!\,\ce{#1}\,\!}
+\newcommand{\xleq}[2][\hspace{5mm}]{\,\!\,\ensuremath{\xlongequal[\text{#1}]{\text{#2}}}\,\!\,}
+\newcommand{\conc}[2][c]{\ensuremath{#1(\cemh{#2})}}
+\newcommand{\cmark}{{\ssans\char"2713}}  % ✓ CHECK MARK
+\newcommand{\xmark}{{\ssans\char"2717}}  % ✗ BALLOT X
+\newcommand{\hcmark}{{\ssans\char"2714}} % ✔ HEAVY CHECK MARK
+\newcommand{\hxmark}{{\ssans\char"2718}} % ✘ HEAVY BALLOT X
+
+
+\title{化学笔记}
+\author{}
+\date{\today}

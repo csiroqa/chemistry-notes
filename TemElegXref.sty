@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{TemElegXref}[2025/08/30 v1.0 hyperref options]
+
+\RequirePackage[
+	pdftoolbar=false, % 显示工具栏
+	pdfmenubar=true, % 显示菜单栏
+	bookmarks=true, % 在PDF上加书签，配置为 false 似乎也能产生标签，尚需确认
+	bookmarksnumbered=true, % 在书签上加上节号等
+	bookmarksopen=false, % 展開所有層級
+	colorlinks=true,   % 設置超鏈接的顔色
+	% linkcolor=black,
+	% filecolor=black,
+	% urlcolor=black,
+	% citecolor=black,
+	% pdfdirection=R2L, % 從右往左翻頁
+	pdfstartview=Fit, % 页面适合高度
+	pdfduplex=DuplexFlipLongEdge, % 双面打印，长边翻转
+	]{hyperref}
+\RequirePackage{bookmark}
+\hypersetup{ %
+%    pdfpagelayout={SinglePage}, % 單頁顯示
+    pdfpagelayout={OneColumn}, % 單頁连续
+%    pdfpagelayout={TwoColumnLeft}, % 雙叶对开连续，偶数页在左侧
+%    pdfpagelayout={TwoColumnRight}, % 雙叶对开连续，偶数页在右侧
+    pdfpagelayout={TwoPageLeft},%
+%    pdfpagelayout={TwoPageRight}, % 首页对开。奇数頁が右側になるような見開きモードで開く
+}

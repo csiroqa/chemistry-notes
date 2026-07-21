@@ -1,0 +1,31 @@
+# VSCode 等配置
+.*/*
+# LaTeX 中间文件（保留 .pdf 和 .synctex.gz）
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.ist
+*.acn
+*.acr
+*.alg
+*.xdv
+*.spl
+*.synctex(busy)

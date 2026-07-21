@@ -1,0 +1,377 @@
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{liTemElegXv2.4}[2026/02/06 v2.4 a lite edition for TemElegX]  
+
+\RequirePackage{calc}
+\RequirePackage{xparse}
+
+% \RequirePackage{circledtext}
+\RequirePackage{circledsteps}
+% \newcommand{\Circ}[1]{\circledtext{#1}}
+\RequirePackage[normalem, normalbf]{ulem}
+\RequirePackage[thicklines]{cancel}
+\RequirePackage{siunitx}
+\sisetup{detect-all, separate-uncertainty=true, inter-unit-product = \ensuremath{{}\cdot{}}, range-phrase=--}
+
+\RequirePackage{nicematrix}
+\RequirePackage{enumitem}
+
+
+\newcommand{\n}{\par}
+\renewcommand{\figurename}{\textbf{Fig.}}
+\renewcommand{\tablename}{\textbf{Tab.}}
+% \ctexset{
+  % contentsname = {目录},
+  % listfigurename = {插图},
+  % listtablename = {表格},
+  % figurename = {图},
+  % tablename = {表},
+  % abstractname = {摘要},
+  % indexname = {索引},
+  % appendixname = {附录},
+  % bibname = {参考文献},
+  % proofname = {证明},
+  % refname = {参考文献},
+  % algorithmname = {算法},
+  % continuation = {续}
+% }
+%\renewcommand{\underline}{\uline}
+
+
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{family=TemElegX, prefix=TemElegX@}
+\DeclareBoolOption{geometry}
+\DeclareBoolOption{fancy}
+\DeclareBoolOption{color}
+\DeclareBoolOption{font}
+\DeclareBoolOption{uplatex}
+\DeclareBoolOption{graphicx}
+\DeclareBoolOption{table}
+\DeclareBoolOption{math}
+\DeclareBoolOption{phys}
+\DeclareBoolOption{chem}
+\DeclareBoolOption{env}
+\ProcessKeyvalOptions*
+
+\ifTemElegX@geometry
+  \RequirePackage{geometry}%
+  \geometry{
+    a4paper, 
+    inner=2.8cm, outer=4.4cm,%width=13.8cm
+    top=4cm, bottom=2.6cm, includefoot,%%height=23.1cm
+    headheight=6mm,%
+      % % headheight = 2.7cm,
+      headsep    = 0.3cm,
+      footskip   = 0.8cm,
+    heightrounded
+  }%
+  \linespread{1.3}%
+  \raggedbottom%
+\fi
+
+\ifTemElegX@fancy
+  \RequirePackage{fancyhdr}%
+  \pagestyle{fancy}%
+  %\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+  %\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+  %\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+  %\renewcommand{\subsectionmark}[1]{\markright{\thesubsection\ #1}}
+  \fancyhf{}%
+  \fancyhead[LE]{\leftmark}% 在偶数页的左侧显示章名
+  \fancyhead[RO]{\rightmark}% 在奇数页的右侧显示小节名
+  \renewcommand{\headrulewidth}{0.6pt}% 页眉与正文之间的水平线粗细
+  \renewcommand{\footrulewidth}{0pt}
+  \addtolength{\topmargin}{-12pt}%
+  \setlength{\headheight}{28pt}% 页眉高度
+  \pagestyle{fancy}
+  \fancyfoot[RO,LE]{~\thepage~}
+  \newcommand{\thetitle}{}
+  \newcommand{\settitle}[1]{\renewcommand{\thetitle}{#1}}
+  \let\Title\title
+  \renewcommand{\title}[1]{\Title{#1}\settitle{#1}}
+  \fancyfoot[LO,RE]{~\textit{\thetitle}~}% 在奇数页的左侧，偶数页的右侧显示书名
+\fi
+
+\ifTemElegX@font
+  \RequirePackage{amssymb}
+  \RequirePackage{amsfonts}
+%
+  \ifTemElegX@uplatex
+  \else
+%     \RequirePackage[no-math]{fontspec}
+% %
+%     \setmainfont[%
+%     ItalicFont=NewCM10-Italic.otf,%
+%     BoldFont=NewCM10-Bold.otf,%
+%     BoldItalicFont=NewCM10-BoldItalic.otf,%
+%     SmallCapsFeatures={Numbers=OldStyle},
+%     RawFeature=+dlig]{NewCM10-Regular.otf}
+% %
+%     \newfontfamily\sanskrittext[Script=Devanagari, Language=Sanskrit, BoldFont=NewCM10Devanagari-Bold.otf]{NewCM10Devanagari-Regular.otf}%
+%     \newfontfamily\greek[CharacterVariant=4,StylisticSet=7]{NewCM10-Regular.otf}%middlegreekon
+%     \newfontfamily\greeksans[CharacterVariant=4,StylisticSet=6,StylisticSet=7]{NewCMSans10-Regular.otf}%middlegreeksans
+%     \newfontfamily\russian[CharacterVariant=3]{NewCM10-Regular.otf}%middlegreekon
+%     \newfontfamily\russiansans[CharacterVariant=3]{NewCMSans10-Regular.otf}%middlegreeksans
+%     \newfontfamily\ipafont[StylisticSet=5,ItalicFont=NewCM10-Italic]{NewCM10-Regular.otf}%ipa
+%     \newfontfamily\textca[BoldFont=NewCMSans10-Bold.otf,ItalicFont=NewCMSans10-Oblique.otf]{NewCMSans10-Regular.otf}%canadian
+% %
+%     \setsansfont[%
+%     ItalicFont=NewCMSans10-Oblique.otf,%
+%     BoldFont=NewCMSans10-Bold.otf,%
+%     BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+%     SmallCapsFeatures={Numbers=OldStyle}]{NewCMSans10-Regular.otf}%
+% %
+%     \setmonofont[%
+%     ItalicFont=NewCMMono10-Italic.otf,%
+%     BoldFont=NewCMMono10-Bold.otf,%
+%     BoldItalicFont=NewCMMono10-BoldOblique.otf,%
+%     SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}%
+% %
+%     \newfontfamily\gentium{Gentium Plus}%
+%     \newfontfamily\genbook{Gentium Book Plus}%
+%     \newfontfamily\sserif{Source Serif 4}%
+%     \newfontfamily\ssans{Source Sans 3}%
+%     \newfontfamily\cascadia{Cascadia Mono}%
+%     \newfontfamily\sarasa{Sarasa Fixed Slab SC}%
+  \fi
+
+  \newcommand{\re}{\textit} %reference
+  \newcommand{\co}{\textsf} %concept
+\fi
+
+\ifTemElegX@color
+  \RequirePackage{TemElegXcolor}
+  \RequirePackage{tcolorbox}
+  \tcbuselibrary{most}
+
+  % following from Fulcrum-Template@SJTU-AI4Math
+  \newenvironment{entry}[2]
+      {
+      \begin{tcolorbox}[enhanced, colback=#2, boxrule=0pt, frame hidden,
+          borderline west={0.7mm}{0.1mm}{#1},breakable]
+      }
+      {\end{tcolorbox}}
+\fi
+
+\ifTemElegX@graphicx
+  \RequirePackage{graphicx}
+  \graphicspath{{}{../Pic/}{../figures/}{../images/}}
+  \newcommand{\pic}[1][.8]{\includegraphics[width = #1\textwidth]}
+\fi
+
+\ifTemElegX@table
+  \RequirePackage{tabu}
+  \RequirePackage{multirow}
+  \RequirePackage{colortbl}
+  \RequirePackage{makecell}
+  \RequirePackage{booktabs}
+  \RequirePackage{tabularx}
+  \RequirePackage{arydshln} %table
+  \setlist{nosep}                                                   % 移除列表项之间的间距
+\fi
+
+\newcommand{\abs}[1][\ ]{\ensuremath{\left\lvert #1 \right\rvert}}%
+\ifTemElegX@math
+  \RequirePackage{amsmath}
+  \RequirePackage{amssymb}
+  \RequirePackage{amsfonts}
+  \RequirePackage{amsthm}
+  \RequirePackage{fixdif}
+  \RequirePackage{upgreek}
+  \RequirePackage{mathtools}
+  \RequirePackage{mathrsfs}
+
+  %gb
+  % \newcommand{\initsim}{\sim}
+  % \renewcommand{\sim}{\backsim}
+  % \newcommand{\initcong}{\cong}
+  % \renewcommand{\cong}{\backcong}
+  \newcommand{\leqhorz}{\leq}
+  \renewcommand{\leq}{\leqslant}
+  \newcommand{\geqhorz}{\geq}
+  \renewcommand{\geq}{\geqslant}
+
+  \DeclareMathOperator{\logd}{log}
+  \DeclareMathOperator{\lnd}{ln}
+  \DeclareMathOperator{\lbd}{lb}
+  \DeclareMathOperator{\lgd}{lg}
+
+  \renewcommand{\log}[2][]{\ensuremath{%   logarithm
+    \ifx\relax#1\relax%
+      \ifx\relax#2\relax%
+        \logd%
+      \else%
+        \logd\left(#2\right)%
+      \fi%
+    \else%
+      \ifx\relax#2\relax%
+        \logd_{#1}%
+      \else%
+        \logd_{#1}\left(#2\right)%
+      \fi%
+    \fi%
+  }}%
+  \renewcommand{\ln}[1]{\ensuremath{%      natural logarithm
+    \ifx\relax#1\relax%
+      \lnd%
+    \else%
+      \lnd\left(#1\right)%
+    \fi%
+  }}%
+  \renewcommand{\lg}[1]{\ensuremath{%      decimal logarithm
+    \ifx\relax#1\relax%
+      \lgd%
+    \else%
+      \lgd\left(#1\right)%
+    \fi%
+  }}%
+  \newcommand{\lb}[1]{\ensuremath{%        binary  logarithm
+    \ifx\relax#1\relax%
+      \lbd%
+    \else%
+      \lbd\left(#1\right)%
+    \fi%
+  }}
+%
+  \newcommand{\HH}{\ensuremath{\mathbb{H}}}% 四元数
+  \newcommand{\CC}{\ensuremath{\mathbb{C}}}%
+  \newcommand{\RR}{\ensuremath{\mathbb{R}}}%
+  \newcommand{\NN}{\ensuremath{\mathbb{N}}}%
+  \newcommand{\QQ}{\ensuremath{\mathbb{Q}}}%
+  \newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}%
+%
+  \newcommand{\dotlessi}{\i}%
+  \newcommand{\ii}{\ensuremath{\mathrm{i}}}%
+  \newcommand{\dotlessj}{\j}%
+  \newcommand{\jj}{\ensuremath{\mathrm{j}}}%
+  \newcommand{\mrm}{\mathrm}%
+  \newcommand{\ee}{\ensuremath{\mathrm{e}}}%
+  \newcommand{\diff}{\ensuremath{\d}}
+  
+  \newcommand{\deriv}[3][1]{%
+      \ifnum#1=1%
+          \frac{\d #2}{\d #3}%
+      \else%
+          \frac{\d^{#1} #2}{\d #3^{#1}}%
+      \fi%
+  }%
+  \newcommand{\pderiv}[3][1]{\ensuremath{%
+      \ifnum#1=1%
+          \frac{\partial #2}{\partial #3}%
+      \else%
+          \frac{\partial^{#1} #2}{\partial #3^{#1}}%
+      \fi%
+  }}%
+  \newcommand{\mpderiv}[5]{\ensuremath{%
+    \ifnum#3=1%
+      \ifnum#5=1%
+        \frac{\partial^{2} #1}{\partial #2 \partial #4}%
+      \else%
+        \frac{\partial^{\the\numexpr1+#5} #1}{\partial #2 \partial #4^{#5}}%
+      \fi%
+    \else%
+      \ifnum#5=1%
+        \frac{\partial^{\the\numexpr#3+1} #1}{\partial #2 \partial #4^{#5}}%
+      \else%
+        \frac{\partial^{\the\numexpr#3+#5} #1}{\partial #2^{#3} \partial #4^{#5}}%
+    \fi%
+  }}%
+  \newcommand{\upderiv}[3][1]{\ensuremath{%
+      \ifnum#1=1%
+          \frac{\char"2202 #2}{\char"2202 #3}%
+      \else%
+          \frac{\char"2202^{#1} #2}{\char"2202 #3^{#1}}%
+      \fi%
+  }}%
+  \newcommand{\mupderiv}[5]{\ensuremath{%
+    \ifnum#3=1%
+      \ifnum#5=1%
+        \frac{\char"2202^{2} #1}{\char"2202 #2 \char"2202 #4}%
+      \else%
+        \frac{\char"2202^{\the\numexpr1+#5} #1}{\char"2202 #2 \char"2202 #4^{#5}}%
+      \fi%
+    \else%
+      \ifnum#5=1%
+        \frac{\char"2202^{\the\numexpr#3+1} #1}{\char"2202 #2 \char"2202 #4^{#5}}%
+      \else%
+        \frac{\char"2202^{\the\numexpr#3+#5} #1}{\char"2202 #2^{#3} \char"2202 #4^{#5}}%
+    \fi%
+  }}%
+  \newcommand{\transpose}[1]{\ensuremath{#1^{\mathrm{T}}}}%
+  \ifTemElegX@uplatex
+  \else
+    \RequirePackage[
+      warnings-off={
+        mathtools-colon,
+        mathtools-overbracket
+      }
+    ]{unicode-math}
+    \RequirePackage[olddefault, varnothing]{fontsetup}
+    \setmainfont[%
+    ItalicFont=NewCM10-Italic.otf,%
+    BoldFont=NewCM10-Bold.otf,%
+    BoldItalicFont=NewCM10-BoldItalic.otf,%
+    SmallCapsFeatures={Numbers=OldStyle},
+    RawFeature=+dlig]{NewCM10-Regular.otf}
+    % \setmathfont{Latin Modern Math}%
+    \setmathfont[CharacterVariant=1]{NewCMMath-Regular.otf}
+    % \setmathfont{XITS Math}[range={scr, bfscr}]%
+    \setmathfont{XITS Math}[range={scr, bfscr, "2234-"2235, "2669-"266B, "2220, "29A2-"29A5}]%
+    \newcommand{\bbsc}{\setmathfont[StylisticSet=5]{NewCMMath-Regular.otf}}
+  \fi
+\fi
+
+\ifTemElegX@env
+  \ifTemElegX@color
+    \RequirePackage{TemEnvX}%
+  \else
+    \newtheorem{Theorem}{Theorem}[section] % 定理
+    \newtheorem{Lemma}{Lemma}[section] % 引理
+    \newtheorem{Axiom}{Axiom}[section] % 公理
+    \newtheorem{Hypothesis}{Hypothesis}[section] % 假设
+    \newtheorem{Goal}{Goal}[section] % 目标
+    \newtheorem{Conjecture}{Conjecture}[section] % 猜想
+    \newtheorem{Prop}{Proposition}[section] % 命题
+    \newtheorem{Corollary}{Corollary}[section] % 推论
+    \newtheorem{Def}{Definition}[section] % 定义
+    \newtheorem{Remark}{Remark}[section] % 备注
+    \newtheorem{Info}{Infomation}[section] % 信息
+    \newtheorem{Note}{Note}[section] % 注释
+    \newtheorem{Tactic}{Tactic}[section] % 策略
+    \newtheorem{Calc}{Calculation}[section] % 计算
+    \newtheorem{Algorithm}{Algorithm}[section] % 算法
+    \newtheorem{Example}{Example}[section] % 例子
+    \newtheorem{Exercise}{Exercise}[section] % 练习
+    \newtheorem{Proof}{Proof}[section] % 证明
+    \newtheorem{Think}{Think}[section] % 思考
+    \newtheorem{Quiz}{Quiz}[section] % 提问
+  \fi
+\fi
+
+\ifTemElegX@chem
+  \RequirePackage{chemfig}%
+  \RequirePackage{extarrows}%
+  \RequirePackage[version = 4]{mhchem}%
+\fi
+
+
+\AtEndPreamble{
+  \usepackage{circledtext}
+  \usepackage{circledsteps}
+  % \newcommand{\Circ}[1]{\circledtext{#1}}
+  % %\usepackage[perpage, hang, ragged, stable, para]{footmisc} % this should come last of hyperref
+  % \usepackage[ragged, stable, marginal, hang, multiple]{footmisc} % this should come last of hyperref
+  \usepackage[perpage, ragged, stable, hang, multiple]{footmisc} % this should come last of hyperref
+  % 使脚注标记不呈现为普通上标
+  % \renewcommand{\thefootnote}{\Circled{\arabic{footnote}}}
+  \renewcommand{\thefootnote}{\circledtext{\arabic{footnote}}}
+  % \renewcommand{\@makefntext}[1]{%
+  %   \setlength\leftskip{1.2\ccwd}%
+  %   \setlength\parindent{2\ccwd}\selectfont
+  %   \noindent\llap{\@thefnmark\ }#1
+  % }
+  \def\nosuper@makefnmark{\hbox{\normalfont\@thefnmark\space}}
+  \let\save@makefntext\@makefntext
+  \long\def\@makefntext#1{{%
+    \let\@makefnmark\nosuper@makefnmark
+    \save@makefntext{#1}}}
+}
