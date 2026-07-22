@@ -1,0 +1,128 @@
+\section{\S 3.2 化学电源}\label{sect:化学电源}
+
+    \subsection{一次电池}\label{subsec:一次电池}
+
+        \subsubsection{普通锌锰干电池}\label{subsubsec:普通锌锰干电池}
+
+            \textbf{负极}：\cemh{Zn} 壳
+
+            \textbf{正极}：\cemh{MnO2} 和 \cemh{C}
+
+            \textbf{电解质}：\cemh{NH4Cl} 糊状电解质
+
+            负极反应：\cemh{Zn - 2e- \xleq{} Zn^{2+}}
+
+            正极反应：\cemh{2NH4+ + 2e- \xleq{} 2NH3 ^ + H2 ^}（\cemh{MnO2} 用于吸收 \cemh{H2} 防止极化）
+
+        \subsubsection{碱性锌锰干电池}\label{subsubsec:碱性锌锰干电池}
+
+            \textbf{改进}：用 \cemh{KOH} 代替 \cemh{NH4Cl}，比能量更高，放电更稳定。
+
+            \begin{xmp}[锌锰电池反应]{碱性 \cemh{Zn-Mn} 电池半反应}
+                写出碱性锌锰干电池的正负极反应。
+
+                负极：\cemh{Zn + 2OH- - 2e- \xleq{} Zn(OH)2}
+
+                正极：\cemh{2MnO2 + 2H2O + 2e- \xleq{} Mn2O3 + 2OH-}
+            \end{xmp}
+
+    \subsection{二次电池}\label{subsec:二次电池}
+
+        \subsubsection{铅蓄电池}\label{subsubsec:铅蓄电池}
+
+            \textbf{负极}：\cemh{Pb}
+
+            \textbf{正极}：\cemh{PbO2}
+
+            \textbf{电解质}：稀 \cemh{H2SO4}
+
+            \textcolor{blue}{\textbf{放电}：}
+
+            负极：\cemh{Pb + SO4^{2-} - 2e- \xleq{} PbSO4 v}
+
+            正极：\cemh{PbO2 + 4H+ + SO4^{2-} + 2e- \xleq{} PbSO4 v + 2H2O}
+
+            总反应：\cemh{Pb + PbO2 + 4H+ + 2SO4^{2-} \xleq{} 2PbSO4 v + 2H2O}
+
+            \textcolor{blue}{\textbf{充电}：}（放电的逆过程）
+
+            阴极（原负极）：\cemh{PbSO4 + 2e- \xleq{} Pb + SO4^{2-}}
+
+            阳极（原正极）：\cemh{PbSO4 + 2H2O - 2e- \xleq{} PbO2 + 4H+ + SO4^{2-}}
+
+            \textcolor{red}{可根据硫酸密度判断充电程度。}
+
+        \subsubsection{锂离子电池}\label{subsubsec:锂离子电池}
+
+            \textcolor{blue}{锂电池}：负极 \cemh{Li - e- \xleq{} Li+}（需用非水电解质）
+
+            \textcolor{blue}{锂离子电池}：\cemh{Li+} 在正负极间"摇椅式"脱出和嵌入。
+
+            \begin{xmp}[锂离子电池]{\cemh{LiCoO2}—\cemh{C6} 锂电池}
+                以钴酸锂（\cemh{LiCoO2}）—石墨（\cemh{C6}）锂电池为例。
+
+                \textbf{放电时}：
+
+                负极：\cemh{LixC6 - xe- \xleq{} C6 + xLi+}
+
+                正极：\cemh{Li_{1-x}CoO2 + xLi+ + xe- \xleq{} LiCoO2}
+
+                总反应：\cemh{Li_{1-x}CoO2 + LixC6 \xleq{} LiCoO2 + C6}
+
+                \textcolor{blue}{看 \cemh{Li+} 写电荷比标 \cemh{Co} 化合价容易。}
+
+                \textbf{负极材料}：层状石墨材料
+
+                \textbf{正极材料}：含锂的化合物
+            \end{xmp}
+
+    \subsection{燃料电池}\label{subsec:燃料电池}
+
+        \textcolor{red}{燃料电池：将燃料和氧化剂的化学能直接转化为电能的装置。}
+
+        \subsubsection{氢氧燃料电池}\label{subsubsec:氢氧燃料电池}
+
+            总反应：\cemh{2H2 + O2 \xleq{} 2H2O}
+
+            \begin{center}
+            \setlength{\tabcolsep}{3pt}
+            \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|}
+                \hline
+                \textbf{介质} & \textbf{负极反应} & \textbf{正极反应} & \textbf{pH 变化} \\
+                \hline
+                酸性 & \makecell[l]{\cemh{2H2 - 4e- -> 4H+}} & \makecell[l]{\cemh{O2 + 4H+ + 4e- -> 2H2O}} & 负极↓\par 正极↑ \\
+                \hline
+                碱性 & \makecell[l]{\cemh{2H2 + 4OH- - 4e- -> 4H2O}} & \makecell[l]{\cemh{O2 + 2H2O + 4e- -> 4OH-}} & 负极↓\par 正极↑ \\
+                \hline
+                熔融氧化物 & \makecell[l]{\cemh{2H2 + 2O^{2-} - 4e- -> 2H2O}} & \makecell[l]{\cemh{O2 + 4e- -> 2O^{2-}}} & --- \\
+                \hline
+                碳酸盐 & \makecell[l]{\cemh{2H2 + 2CO3^{2-} - 4e- -> 2H2O + 2CO2}} & \makecell[l]{\cemh{O2 + 2CO2 + 4e- -> 2CO3^{2-}}} & --- \\
+                \hline
+            \end{tabular}}
+            \end{center}
+
+            \textcolor{red}{极区 pH 变化规律：主要看电极反应，不是看总反应。}
+
+        \subsubsection{其他燃料电池}\label{subsubsec:其他燃料电池}
+
+            \begin{xmp}[甲烷燃料电池]{\cemh{CH4} 在碱性环境中的反应}
+                写出甲烷作燃料时，在碱性环境中的负极反应。
+
+                负极：\cemh{CH4 + 10OH- - 8e- \xleq{} CO3^{2-} + 7H2O}
+
+                总反应：\cemh{CH4 + 2O2 + 2OH- \xleq{} CO3^{2-} + 3H2O}
+            \end{xmp}
+
+            \begin{xmp}[甲醇燃料电池]{\cemh{CH3OH} 燃料电池}
+                已知在有水条件下，液态 \cemh{CH3OH} 在负极上被氧化，产生 \cemh{CO2} 和 \cemh{H+} 并流出电子；\cemh{H+} 经过质子交换膜，在正极上与 \cemh{O2} 和流入的电子反应生成 \cemh{H2O}。
+
+                负极：\cemh{CH3OH + H2O - 6e- \xleq{} CO2 ^ + 6H+}
+
+                正极：\cemh{O2 + 4H+ + 4e- \xleq{} 2H2O}
+
+                总反应：\cemh{2CH3OH + 3O2 \xleq{} 2CO2 + 4H2O}
+
+                \textcolor{blue}{电解质溶液换成 \cemh{KOH} 溶液：}
+
+                负极：\cemh{CH3OH + 8OH- - 6e- \xleq{} CO3^{2-} + 6H2O}
+            \end{xmp}
