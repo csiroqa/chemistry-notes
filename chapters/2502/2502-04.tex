@@ -1,95 +1,62 @@
-\section{\S 3.4 金属腐蚀与防护}\label{sect:金属腐蚀与防护}
-
-    \subsection{金属腐蚀的本质}\label{subsec:金属腐蚀本质}
-
-        \textcolor{red}{\cemh{M - $n$ e- \xleq{} M^{n+}}（金属被氧化——被腐蚀）}
+\section{\S 4.4 金属腐蚀与防护}\label{sect:金属腐蚀与防护}
 
     \subsection{化学腐蚀}\label{subsec:化学腐蚀}
 
-        金属与氧化剂（\cemh{O2}、\cemh{Cl2}、\cemh{H+} 等）直接接触发生氧化还原反应。
+        化学腐蚀：较少且缓慢
 
-        \textcolor{blue}{化学腐蚀较少且缓慢。}
+        \cemh{Fe + H+}\text{（aq）}
+
+        \cemh{Fe + Cl2}
+
+        \cemh{Fe + O2}
 
     \subsection{电化学腐蚀}\label{subsec:电化学腐蚀}
 
-        \textcolor{red}{电化学腐蚀是更普遍的金属腐蚀形式。}
+        电化学腐蚀：更普通的金属腐蚀
 
-        铁制品（铁碳合金）在电解质溶液中形成微电池。
+        铁制品：铁碳合金
+
+        更更普通的电化学腐蚀：吸氧腐蚀
 
         \subsubsection{吸氧腐蚀}\label{subsubsec:吸氧腐蚀}
 
-            \textcolor{red}{更普遍的电化学腐蚀形式（中/碱性条件）。}
+            负极：\cemh{Fe - 2e- \xleq{} Fe^{2+}}
 
-            负极（\cemh{Fe}）：\cemh{Fe - 2e- \xleq{} Fe^{2+}}
+            正极：\cemh{O2 + 2H2O + 4e- \xleq{} 4OH-}
 
-            正极（\cemh{C}）：\cemh{O2 + 2H2O + 4e- \xleq{} 4OH-}
-
-            铁锈的生成：
-
-            \[\cemh{Fe^{2+}} \xleq[]{\text{氧化}} \cemh{Fe(OH)2} \xleq[]{\text{氧化}} \cemh{Fe(OH)3} \xleq{} \cemh{Fe2O3*$n$H2O}\]（铁锈）
-
-            \textcolor{blue}{\(\Delta S < 0\) 且自然条件下自发（\(\Delta H < 0\)）。}
+            \cemh{Fe(OH)2} \(\xrightarrow{\text{[O]}}\) \cemh{Fe(OH)3} \(\longrightarrow\) \boxed{\cemh{Fe2O3*$x$H2O}} 铁锈
 
         \subsubsection{析氢腐蚀}\label{subsubsec:析氢腐蚀}
 
-            \textcolor{red}{酸性条件下的电化学腐蚀。}
+            正极：\cemh{2H+ + 2e- \xleq{} H2 ^} \(\Rightarrow\) 竞争
 
-            负极（\cemh{Fe}）：\cemh{Fe - 2e- \xleq{} Fe^{2+}}
+    \subsection{金属被腐蚀是宿命}\label{subsec:金属腐蚀宿命}
 
-            正极（\cemh{C}）：\cemh{2H+ + 2e- \xleq{} H2 ^}
+        \cemh{Fe + O2 -> $\cdots{} \cdots{}$ -> Fe2O3*$n$H2O}
 
-    \subsection{金属腐蚀的利用}\label{subsec:金属腐蚀的利用}
+        \(\Delta S < 0\) \& 自发
 
-        铁炭混合物（铁屑和活性炭的混合物）在水溶液中可形成许多微电池，用于去除水中 \cemh{Cu^{2+}}、\cemh{Pb^{2+}} 等重金属离子。
+        \(\therefore\) \(\Delta H < 0\)
 
-    \subsection{金属的防护}\label{subsec:金属的防护}
+        马口铁：镀锡
 
-        \subsubsection{覆盖保护层}\label{subsubsec:覆盖保护层}
+        白口铁：镀锌
 
-            \begin{itemize}
-                \item 涂装（油漆）、电镀
-                \item 马口铁——镀锡；白口铁——镀锌
-            \end{itemize}
+    \subsection{防护}\label{subsec:防护}
 
-        \subsubsection{改变成分}\label{subsubsec:改变成分}
+        \begin{enumerate}
+            \item 减少含碳量
+            \item 与电源负极相连
+            \item 镀层破损后的白口铁
+            \item 船绑锌（\textcolor{red}{牺牲阳极的阴极保护法}）\(\Rightarrow\)（牺牲负极的正极保护法）
+        \end{enumerate}
 
-            减少含碳量；合金化（如不锈钢：\cemh{Fe} + \cemh{Cr} + \cemh{Ni}）。
+        % [IMAGE: 食盐水+酚酞+赤血盐 K₃[Fe(CN)₆] 实验示意图，K₃[Fe(CN)₆] + Fe²⁺ → 蓝色]
 
-        \subsubsection{电化学保护法}\label{subsec:电化学保护法}
+        \cemh{K3[Fe(CN)6] + Fe^{2+} ->} 蓝色
 
-            \begin{dfn}[牺牲阳极法]{牺牲阳极的阴极保护法}
-                将活泼金属（\cemh{Zn}、\cemh{Mg}、\cemh{Al}）与被保护的钢铁设备连接，活泼金属作阳极被腐蚀，钢铁作阴极被保护。
+        \textbf{5.\ 外加电流的阴极保护法}
 
-                \textcolor{blue}{例如：轮船外壳绑锌块。}
+        强迫阴极（原本的负极）得电子。
 
-                阳极（\cemh{Zn}）：\cemh{Zn - 2e- \xleq{} Zn^{2+}}
-
-                阴极（\cemh{Fe}）：\cemh{O2 + 2H2O + 4e- \xleq{} 4OH-}
-            \end{dfn}
-
-            \begin{dfn}[外加电流法]{外加电流的阴极保护法}
-                直流电源负极接被保护金属（阴极），辅助阳极（石墨/\cemh{Pt}/\cemh{Ti}）接电源正极。
-
-                \textcolor{blue}{例如：埋地管道、大型钢结构。}
-
-                \textcolor{red}{强迫阴极（原本的负极）得电子。}
-            \end{dfn}
-
-            \begin{center}
-            \small
-            \begin{tabular}{|c|c|c|}
-                \hline
-                \textbf{对比项} & \textbf{牺牲阳极法} & \textbf{外加电流法} \\
-                \hline
-                是否需要电源 & 不需要 & 需要 \\
-                \hline
-                适用范围 & 小结构 & 大型结构 \\
-                \hline
-                保护效果 & 寿命有限 & 可调节 \\
-                \hline
-            \end{tabular}
-            \end{center}
-
-        \subsubsection{环境调控}\label{subsubsec:环境调控}
-
-            干燥环境、除去溶解氧、加入缓蚀剂等。
+        % [IMAGE: 外加电流阴极保护法示意图，标注：e⁻、Fe 阴极、石墨]
