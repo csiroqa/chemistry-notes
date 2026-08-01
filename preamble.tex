@@ -1,3 +1,4 @@
+\RequirePackage{longtable}   % 附录表格跨页（须在 liTemElegX 加载 arydshln 之前）
 \usepackage[
     geometry,
     fancy,
@@ -12,6 +13,8 @@
 ]{liTemElegXv2.4}
 \usepackage{xeTemElegX}
 \usepackage{TemElegXref}
+\usepackage{xltabular}   % 附录 tabularx 型表格跨页
+% \usepackage{pdfpages}  % 附录 A（元素周期表）插入 PDF 时启用，参见 appendix/appendix-periodic.tex
 % \graphicspath{{../Pic/}{../figures/}{../images/}}
 % \raggedbottom
 \hypersetup{ %
@@ -34,6 +37,10 @@
 \newcommand{\xmark}{{\ssans\char"2717}}  % ✗ BALLOT X
 \newcommand{\hcmark}{{\ssans\char"2714}} % ✔ HEAVY CHECK MARK
 \newcommand{\hxmark}{{\ssans\char"2718}} % ✘ HEAVY BALLOT X
+
+% 附录数据清单：逐条独立数据，需适度行距（\setlist{nosep} 全局压平后在此恢复）
+\newlist{datas}{itemize}{2}
+\setlist[datas]{label=\textbullet, leftmargin=1em, itemsep=2pt, topsep=3pt, parsep=0pt}
 
 
 \title{化学笔记}

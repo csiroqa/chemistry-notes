@@ -5,7 +5,7 @@
 \makeatletter
 \def\@endpart{\par\nobreak\vfil\newpage}
 \makeatother
-\includeonly{chapters/2501,chapters/2502}
+\includeonly{chapters/2501,chapters/2502,appendix/appendix-periodic,appendix/appendix-data,appendix/appendix-concepts,appendix/appendix-formulas}
 
 \begin{document}
     \maketitle
@@ -32,5 +32,17 @@
     
     \cleardoublepage
     \include{chapters/2502}
+
+    \cleardoublepage
+    \part{附录}
+    \appendix
+
+    \include{appendix/appendix-periodic}
+
+    \include{appendix/appendix-data}
+
+    \include{appendix/appendix-concepts}
+
+    \include{appendix/appendix-formulas}
 
 \end{document}
