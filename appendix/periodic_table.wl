@@ -1,4 +1,10 @@
+(* ::Package:: *)
+
 ClearAll["Global`*"];
+
+(* \:5b57\:4f53\:ff1asans \:7528\:4e8e\:6b63\:6587\:6807\:7b7e\:ff1bboldItalic \:7528\:4e8e s/d/p/f/ds \:533a\:5b57\:6bcd\:ff08NewCM10-BoldItalic \:53ef\:907f\:514d CairoFont \:56de\:9000\:ff09 *)
+sansFont = "NewComputerModernSans10";
+boldItalicFont = "NewComputerModern10-BoldItalic";
 
 (* 1. colors and labels *)
 colors = <|
@@ -19,7 +25,7 @@ labels = <|
    "alkali" -> "Alkali Metal",
    "alkaline" -> "Alkaline Earth",
    "transition" -> "Transition Metal",
-   "post" -> "Post-Transition",
+   "post" -> "Post\:2011Transition",
    "metalloid" -> "Metalloid",
    "nonmetal" -> "Reactive Nonmetal",
    "halogen" -> "Halogen",
@@ -107,8 +113,8 @@ draw[] := Module[{mainCells, lanCells, actCells, headers, blocks, legend},
      {z, 118}
    ];
 
-   AppendTo[mainCells, drawPlaceholder["57-71\nLa-Lu", "lanthanide", 3, 7.3 - 6]];
-   AppendTo[mainCells, drawPlaceholder["89-103\nAc-Lr", "actinide", 3, 7.3 - 7]];
+   AppendTo[mainCells, drawPlaceholder["57\:201171\nLa\:2011Lu", "lanthanide", 3, 7.3 - 6]];
+   AppendTo[mainCells, drawPlaceholder["89\:2011103\nAc\:2011Lr", "actinide", 3, 7.3 - 7]];
 
    (* lanthanide/actinide sub-tables *)
    lanCells = Table[drawCell[57 + i - 1, i + 2, -0.95], {i, 15}];
@@ -116,7 +122,7 @@ draw[] := Module[{mainCells, lanCells, actCells, headers, blocks, legend},
 
    (* headers *)
    headers = {
-     Text[Style["Group \[RightArrow]", 20, Bold, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], {0.1, 7.85}, {Right, Center}],
+     Text[Style["Group", 20, Bold, GrayLevel[0.3], FontFamily -> sansFont], {0.5, 7.85}, {Right, Center}],
      Table[{
        Text[Style[casGroup[g], 18, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], {g, 7.9}],
        Text[Style[g, 20, Bold, Black, FontFamily -> "NewComputerModernSans10"], {g, 7.5}]
@@ -126,15 +132,13 @@ draw[] := Module[{mainCells, lanCells, actCells, headers, blocks, legend},
      Table[Text[Style[p, 20, Bold, Black, FontFamily -> "NewComputerModernSans10"], {-0.5, 7.3 - p}], {p, 1, 7}]
    };
 
-   (* orbital blocks *)
+   (* orbital blocks\:ff1a\:659c\:4f53\:52a0\:7c97\:5b57\:6bcd\:7528 NewCM10-BoldItalic \:8fde\:5b57\:7b26\:7528\:4e0d\:95f4\:65ad\:8fde\:5b57\:7b26 \:2011(U+2011) \:907f\:514d\:56de\:9000 *)
    blocks = {
-     {Line[{{0.52, 6.89}, {2.48, 6.89}}], Text[Row[{Style["s", 20, Bold, Italic, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], Style["-block", 20, Bold, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"]}], {1.5, 6.89 + 0.15}]},
-     {Line[{{2.52, 3.89}, {10.48, 3.89}}], Text[Row[{Style["d", 20, Bold, Italic, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], Style["-block", 20, Bold, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"]}], {6.5, 3.89 + 0.15}]},
-     {Line[{{12.52, 6.89}, {18.48, 6.89}}], Text[Row[{Style["p", 20, Bold, Italic, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], Style["-block", 20, Bold, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"]}], {15.5, 6.89 + 0.15}]},
-     {Line[{{2.52, -2.544}, {17.48, -2.544}}], Text[Row[{Style["f", 20, Bold, Italic, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], Style["-block", 20, Bold, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"]}], {10, -2.544 - 0.15}]},
-     (* ds 区：11-12 族（P4-P6），上下两条横线 *)
-     {Line[{{10.52, 3.89}, {12.48, 3.89}}], Line[{{10.52, 0.706}, {12.48, 0.706}}],
-      Text[Row[{Style["ds", 20, Bold, Italic, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"], Style["-block", 20, Bold, GrayLevel[0.3], FontFamily -> "NewComputerModernSans10"]}], {11.5, 4.1}]}
+     {Line[{{0.52, 6.89}, {2.48, 6.89}}], Text[Row[{Style["s", 20, GrayLevel[0.3], FontFamily -> boldItalicFont], Style["\:2011block", 20, Bold, GrayLevel[0.3], FontFamily -> sansFont]}], {1.5, 6.89 + 0.15}]},
+     {Line[{{2.52, 3.89}, {10.48, 3.89}}], Text[Row[{Style["d", 20, GrayLevel[0.3], FontFamily -> boldItalicFont], Style["\:2011block", 20, Bold, GrayLevel[0.3], FontFamily -> sansFont]}], {6.5, 3.89 + 0.15}]},
+     {Line[{{12.52, 6.89}, {18.48, 6.89}}], Text[Row[{Style["p", 20, GrayLevel[0.3], FontFamily -> boldItalicFont], Style["\:2011block", 20, Bold, GrayLevel[0.3], FontFamily -> sansFont]}], {15.5, 6.89 + 0.15}]},
+     {Line[{{2.52, -2.544}, {17.48, -2.544}}], Text[Row[{Style["f", 20, GrayLevel[0.3], FontFamily -> boldItalicFont], Style["\:2011block", 20, Bold, GrayLevel[0.3], FontFamily -> sansFont]}], {10, -2.544 - 0.15}]},
+     {Line[{{10.52, 3.89}, {12.48, 3.89}}], Text[Row[{Style["ds", 20, GrayLevel[0.3], FontFamily -> boldItalicFont], Style["\:2011block", 20, Bold, GrayLevel[0.3], FontFamily -> sansFont]}], {11.5, 4.1}]}
    };
 
    (* legend *)

@@ -75,10 +75,12 @@ pHofVsafe[Vml_] := Module[{V = Vml/1000., nA, nB, Vt, cHA, cAminus, c, x, Kb, OH
 (* 绘图与输出设置 *)
 Vmax = 40; (* mL *)
 fontName = "NewComputerModernSans10";
+serifFont = "NewComputerModern10";  (* V 用衬线斜体 *)
+mathFont = "NewComputerModernMath"; (* ⋅ 点乘在数学字体中纯 NewCM 渲染 *)
 curve = Plot[pHofV[V], {V, 0, Vmax}, PlotRange -> {0, 14},
-  AxesLabel -> {"V (mL)", "pH"}, PlotStyle -> {Thick, Black},
+  AxesLabel -> {Row[{Style["V", Italic, FontFamily -> serifFont], Style["\:22C5", FontFamily -> mathFont], Superscript[Style["mL", FontFamily -> fontName], Style["\:20131", FontFamily -> fontName]]}], "pH"}, PlotStyle -> {Thick, Black},
   GridLines -> None, ImageSize -> 700,
-  BaseStyle -> {FontFamily -> fontName}, LabelStyle -> {FontFamily -> fontName},
+  BaseStyle -> {FontFamily -> fontName}, LabelStyle -> {FontFamily -> fontName, FontSize -> 16},
   PlotPoints -> 350, MaxRecursion -> 8, Exclusions -> None, PerformanceGoal -> "Quality"];
 
 (* 导出图像与表格 *)
