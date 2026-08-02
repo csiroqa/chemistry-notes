@@ -1,7 +1,7 @@
 # TemElegX Family Documentation
 
 > TemElegX is a LaTeX template family offering elegant typographic configuration, math support, color themes, and theorem environments.
-> Version overview: liTemElegXv2.4 (lite core), TemElegXv2.2 (legacy full package), pTemElegX (pLaTeX/upLaTeX traditional typesetting), xeTemElegX (XeLaTeX font configuration), TemElegXcolor (color definitions), TemElegXref (hyperref setup), TemEnvX (colored theorem environments).
+> Version overview: liTemElegXv2.4 (lite core), TemElegXv2.2 (legacy full package), pTemElegX (pLaTeX/upLaTeX traditional typesetting), xeTemElegX (XeLaTeX font configuration), LuaTemElegX (LuaLaTeX/LuaHBTeX font configuration, the current recommended engine), TemElegXcolor (color definitions), TemElegXref (hyperref setup), TemEnvX (colored theorem environments).
 
 ---
 
@@ -454,6 +454,112 @@ None.
 
 ---
 
+## LuaTemElegX.sty — LuaLaTeX (LuaHBTeX) Font Configuration Package
+
+The current recommended font configuration package, built for **LuaHBTeX** (`lualatex`). It replaces both `xeTemElegX` (XeLaTeX) and `pTemElegX` (upLaTeX) for modern OpenType + microtypography workflows. It uses `luatexja` instead of `xeCJK` for CJK typesetting, enables `microtype` character protrusion and font expansion, and loads all fonts **by file name** with an explicit `Path` — avoiding the luaotfload name-database scan, which can be slow to build on systems with many installed fonts.
+
+### Modifications to LaTeX Primitives
+
+None.
+
+### Referenced Packages
+
+| Package | Purpose |
+|---------|---------|
+| `amssymb`, `amsfonts` | Math symbols |
+| `fontspec` (no-math) | Font selection |
+| `ctex` (UTF8, fontset=none) | Chinese typesetting support |
+| `luatexja` | CJK typesetting backend for LuaLaTeX (via ctex); `\ltjsetparameter{autospacing=true}` |
+| `luacode` | Embedding Lua code in LaTeX (`\luaexec`, `luacode` environment) |
+| `microtype` | Character protrusion and font expansion (fully effective under LuaLaTeX) |
+
+### Modifications to Existing Commands
+
+| Command | Modification |
+|---------|-------------|
+| `\TeX` | Re-kerned TeX logo with adjusted letter spacing and vertical alignment |
+| `\LaTeX` | Re-kerned LaTeX logo with adjusted letter spacing and vertical alignment |
+
+### Defined Commands
+
+#### Engine Logos
+| Command | Meaning |
+|---------|---------|
+| `\XeLaTeX` | XeLaTeX engine logo |
+| `\LuaLaTeX` | LuaLaTeX engine logo |
+| `\LuaHBLaTeX` | LuaHBLaTeX engine logo |
+| `\lgrquotes` | Left double quotation mark glyph `\char"201C` |
+| `\rgrquotes` | Right double quotation mark glyph `\char"201E` |
+
+#### Font Path Resolution
+
+| Command | Meaning |
+|---------|---------|
+| `\TemElegX@fontpath` | Directory used by all font commands. Defaults to `C:/Windows/Fonts/`; if a `./fonts/` bundle directory exists next to the style file, that is used instead (more portable). |
+
+Fonts are loaded **by file name** with `Path=\TemElegX@fontpath`. Source Han `.ttc` collection files contain multiple faces (JP/K/SC/TC/HC); `FontIndex=2` selects the **Simplified Chinese (SC)** face.
+
+#### Default Font Settings
+
+| Font Category | Font File (SC face where applicable) |
+|--------------|-------------------------------------|
+| Body Roman | NewCM10-Regular.otf (italic, bold, bold-italic each specified) |
+| Sans-serif | NewCMSans10-Regular.otf |
+| Monospace | NewCMMono10-Regular.otf |
+| CJK Roman | SourceHanSerif-Light.ttc (FontIndex=2; bold = SourceHanSerif-SemiBold.ttc, italic = LXGWWenKaiGB-Light.ttf) |
+| CJK Sans | SourceHanSans-Light.ttc (FontIndex=2; bold = SourceHanSans-Medium.ttc) |
+| CJK Mono | LXGWWenKaiMonoGB-Regular.ttf |
+
+#### Supplementary Latin Fonts
+| Font Command | Font File |
+|-------------|-----------|
+| `\gentium` | GentiumPlus-Regular.ttf |
+| `\genbook` | GentiumBookPlus-Regular.ttf |
+| `\sserif` | SourceSerif4-Regular.ttf |
+| `\ssans` | SourceSans3-Regular.ttf |
+| `\cascadia` | CascadiaCode.ttf |
+| `\sarasa` | CascadiaCode.ttf (placeholder; the original Sarasa bundle was dropped to avoid huge files) |
+
+#### Special Script Fonts
+Same set as `xeTemElegX.sty` (NewCM10/NewCMSans-based `\newfontfamily` definitions): `\sanskrittext`, `\greek`, `\greeksans`, `\russian`, `\russiansans`, `\ipafont`, `\textca`, `\newcmgreekguillemots`, `\newcmrussianguillemots`, `\showtiefont`.
+
+#### CJK Font Variants by Weight
+
+**Serif variants (Source Han Serif SC, FontIndex=2):**
+| Command | Weight | Description |
+|---------|--------|-------------|
+| `\song` | Light | Default serif (songti) |
+| `\xbs` | ExtraLight | Small-standard song |
+| `\bs` | Regular | Standard song |
+| `\das` | Medium | Large song |
+| `\cus` | Heavy | Bold song |
+
+**Sans-serif variants (Source Han Sans SC, FontIndex=2):**
+| Command | Weight | Description |
+|---------|--------|-------------|
+| `\hei` | Light | Default sans-serif (heitii) |
+| `\xih` | ExtraLight | Thin hei |
+| `\bh` | Normal | Standard hei |
+| `\dah` | Regular | Large hei |
+| `\cuh` | Heavy | Bold hei |
+
+**Kai (script) variants (LXGW WenKai GB):**
+| Command | Weight | Description |
+|---------|--------|-------------|
+| `\kai` | Regular | Standard kai (script) |
+| `\xik` | Light | Thin kai |
+| `\cuk` | Medium | Bold kai |
+
+**Mixed-purpose:**
+| Command | Font Configuration |
+|---------|-------------------|
+| `\cre` | LXGWWenKaiGB-Light.ttf, for Chinese reference |
+| `\cco` | SourceHanSans-Light.ttc (FontIndex=2), for Chinese concept |
+
+*Note: the Founder Type fonts (`\fzfs`, `\fzss`, `\fzkt`) are not defined here; those require a commercial license and are omitted from the LuaLaTeX package.*
+
+---
+
 ## TemEnvX.sty — Colored Theorem Environments Package
 
 A collection of tcolorbox-driven colored theorem environments, designed to work with `TemElegXcolor.sty`. Each environment renders as a box with a colored left border and background fill.
@@ -532,11 +638,37 @@ Some environments (e.g. `rmk` accepts only one optional argument; `pbm` uses its
 | TemElegXref | v1.0 | 2025-08-30 | Hyperlink configuration |
 | xeTemElegX | v1.0 | 2026-02-03 | Standalone XeLaTeX font configuration |
 | liTemElegXv2.4 | v2.4 | 2026-02-06 | Lite core package, refactored from v2.2 |
+| LuaTemElegX | v1.0 | 2026-08-01 | LuaLaTeX/LuaHBTeX font configuration (luatexja + microtype), replaces xeTemElegX/pTemElegX |
 | TemEnvX | *unmarked* | — | Colored theorem environments (paired with liTemElegXv2.4) |
 
 ---
 
 ## Usage Examples
+
+### Basic Usage (LuaLaTeX) — recommended
+
+Compile with `lualatex` (or `latexmk -lualatex`). Microtype protrusion/expansion and luatexja CJK typesetting are fully effective.
+
+```latex
+% Load the lite core package with options
+\usepackage[
+  geometry,
+  fancy,
+  font,
+  color,
+  graphicx,
+  table,
+  math,
+  env,
+  chem,
+]{liTemElegXv2.4}
+
+% For Chinese font support + microtype, additionally load
+\usepackage{LuaTemElegX}
+
+% For hyperlink configuration
+\usepackage{TemElegXref}
+```
 
 ### Basic Usage (XeLaTeX)
 

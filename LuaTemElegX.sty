@@ -1,0 +1,75 @@
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesPackage{LuaTemElegX}[2026/08/02 v1.2 font settings for lualatex (luahbtex)]
+% 精简版：只加载文档实际使用的字体，移除全部未使用的变体命令，
+% 显著缩短每次编译的字体加载时间。
+
+\RequirePackage{amssymb, amsfonts}
+\RequirePackage[no-math]{fontspec}
+\RequirePackage[UTF8, fontset=none]{ctex}
+% LuaLaTeX 下 ctex 使用 luatexja 后端；\ltjsetparameter{autospacing=true} 等价于 XeLaTeX 的 space=auto
+\RequirePackage{luatexja}
+\ltjsetparameter{autospacing=true}
+
+% LuaHBTeX 实用宏包
+\RequirePackage{luacode}       % 在 LaTeX 中内嵌 Lua 代码（\luaexec、luacode 环境）
+\RequirePackage{microtype}     % 字距凸出（protrusion）与横向伸缩（expansion），LuaLaTeX 下完整生效
+\microtypesetup{protrusion=true, expansion=true}
+
+\setmainfont[%
+  ItalicFont=NewCM10-Italic.otf,%
+  BoldFont=NewCM10-Bold.otf,%
+  BoldItalicFont=NewCM10-BoldItalic.otf,%
+  SmallCapsFeatures={Numbers=OldStyle},
+  RawFeature=+dlig]{NewCM10-Regular.otf}
+
+\setsansfont[%
+  ItalicFont=NewCMSans10-Oblique.otf,%
+  BoldFont=NewCMSans10-Bold.otf,%
+  BoldItalicFont=NewCMSans10-BoldOblique.otf,%
+  SmallCapsFeatures={Numbers=OldStyle}]{NewCMSans10-Regular.otf}
+
+\setmonofont[%
+  ItalicFont=NewCMMono10-Italic.otf,%
+  BoldFont=NewCMMono10-Bold.otf,%
+  BoldItalicFont=NewCMMono10-BoldOblique.otf,%
+  SmallCapsFeatures={Numbers=OldStyle}]{NewCMMono10-Regular.otf}
+
+% CJK 默认字体（族名 + 字重子族名）
+\setCJKmainfont{Source Han Serif SC Light}%
+  [BoldFont={Source Han Serif SC SemiBold},ItalicFont=LXGW WenKai GB Light]%
+\setCJKsansfont{Source Han Sans SC Light}%
+  [BoldFont={Source Han Sans SC Medium}]%
+\setCJKmonofont{LXGW WenKai Mono GB}%
+%
+\newfontfamily\gentium{Gentium Plus}%
+\newfontfamily\genbook{Gentium Book Plus}%
+\newfontfamily\sserif{Source Serif 4}%
+\newfontfamily\ssans{Source Sans 3}%
+\newfontfamily\cascadia{Cascadia Mono}%
+\newfontfamily\sarasa{Sarasa Fixed Slab SC}%
+%
+% CJK 字重变体（按族名 + 字重子族名选择）
+\newCJKfontfamily\song{Source Han Serif SC Light}%
+\newCJKfontfamily\xbs{Source Han Serif SC ExtraLight} % 小标宋
+\newCJKfontfamily\bs{Source Han Serif SC} % 标宋
+\newCJKfontfamily\das{Source Han Serif SC Medium} % 大宋
+\newCJKfontfamily\cus{Source Han Serif SC Heavy} % 粗宋
+\newCJKfontfamily\hei{Source Han Sans SC Light}%
+\newCJKfontfamily\xih{Source Han Sans SC ExtraLight} % 细黑
+\newCJKfontfamily\bh{Source Han Sans SC Normal} % 标黑
+\newCJKfontfamily\dah{Source Han Sans SC} % 大黑
+\newCJKfontfamily\cuh{Source Han Sans SC Heavy} % 粗黑
+\newCJKfontfamily\xik{LXGW WenKai GB Light} % 细楷
+\newCJKfontfamily\kai{LXGW WenKai GB} % 楷体
+\newCJKfontfamily\cuk{LXGW WenKai GB Medium} % 粗楷
+%思源宋体ExtraLight Light 不填   Medium SemiBold Heavy
+%思源黑体ExtraLight Light Normal 不填   Medium   Heavy
+%霞鹜文楷           Light 不填   Medium
+\newCJKfontfamily\cre{LXGW WenKai GB Light} %Chinese reference
+\newCJKfontfamily\cco{Source Han Sans SC Light} %Chinese concept
+
+\renewcommand{\TeX}{T\kern-.5ex\raisebox{-.5ex}{E}\kern-.4exX}
+\renewcommand{\LaTeX}{L\kern-.8ex\raisebox{.6ex}{\textsc{a}}\kern-.3ex\TeX}
+\newcommand{\XeLaTeX}{X\kern-.45ex\raisebox{-.5ex}{\reflectbox{E}}\kern-.4ex\LaTeX}
+\newcommand{\LuaLaTeX}{Lua\LaTeX}
+\newcommand{\LuaHBLaTeX}{LuaHB\LaTeX}

@@ -14,7 +14,7 @@ Cb = 0.10; (* NaOH mol/L *)
 Kw = 1.0*10^-14;
 
 (* 字体设置：首选思源黑体，若系统中名称不同请替换为本地安装名（如 "Source Han Sans SC" 或 "Noto Sans CJK SC"） *)
-fontName = "Source Han Sans SC";
+fontName = "NewComputerModernSans10";
 
 (* 计算 pH 的分段函数（参数 Vml 单位 mL） *)
 pHofV[Vml_] := Module[{V = Vml/1000., nA = Ca Va, nB, Vt, h, oh, eps = 1.*10^-8},
@@ -61,9 +61,9 @@ annotations = {
   Dashed, GrayLevel[0.6], Line[{{Ve, 0}, {Ve, 14}}],   (* 垂直虚线 当量体积 *)
 
   (* 指示剂文本（无箭头）置于指示带右侧 *)
-  Text[Style["甲基橙", FontSize -> 14, Orange, FontFamily -> fontName], {xRight + 1.8, Mean[moRange]}],
-  Text[Style["甲基红", FontSize -> 14, Red, FontFamily -> fontName], {xRight + 1.8, Mean[mrRange]}],
-  Text[Style["酚酞", FontSize -> 14, Magenta, FontFamily -> fontName], {xRight + 1.8, Mean[phRange]}],
+  Text[Style["Methyl Orange", FontSize -> 16, Orange, FontFamily -> fontName], {xRight + 0.8, Mean[moRange]}, {Left, Center}],
+  Text[Style["Methyl Red", FontSize -> 16, Red, FontFamily -> fontName], {xRight + 0.8, Mean[mrRange]}, {Left, Center}],
+  Text[Style["Phenolphthalein", FontSize -> 16, Magenta, FontFamily -> fontName], {xRight + 0.8, Mean[phRange]}, {Left, Center}],
 
   (* 在指示剂带处画短横线并标注代表 pH 值（更精确地靠近当量处） *)
   Thick, Black,
@@ -74,7 +74,7 @@ annotations = {
     Text[Style["9.7", 14, FontFamily -> fontName], {Ve - 1.0, 9.7}],
 
   (* 图例注释：pH 突跃，放在当量点 (Ve,7) 的右侧 *)
-  Text[Style["pH突跃", 20, Bold, FontFamily -> fontName], {Ve + 2.8, 7}]
+  Text[Style["pH Jump", 20, Bold, FontFamily -> fontName], {Ve + 0.8, 7}, {Left, Center}]
 };
 
 finalGraphics = Show[curvePlot,

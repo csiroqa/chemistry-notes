@@ -44,26 +44,42 @@
 
 ## 编译方法
 
-使用 XeLaTeX 编译（支持中文）：
+使用 LuaLaTeX（LuaHBTeX）编译（支持中文、microtype 完整生效）：
 
 ```bash
-xelatex main.tex   # 第一遍
-xelatex main.tex   # 第二遍（解析交叉引用、目录）
+latexmk -lualatex main.tex   # 单条命令（自动多次编译解析交叉引用、目录）
 ```
+
+或手动：
+
+```bash
+lualatex main.tex   # 第一遍
+lualatex main.tex   # 第二遍（解析交叉引用、目录）
+```
+
+首次编译会构建 luaotfload 字体缓存，耗时较长；之后增量编译很快。
+
+## LuaLaTeX 字体
+
+- 引擎改为 **LuaHBTeX**（`lualatex`），中文经 `ctex` + `luatexja` 排版，`microtype` 的凸出/伸缩完整生效。
+- `LuaTemElegX.sty` 默认直接加载 `C:/Windows/Fonts/` 下的系统字体（思源宋体/黑体 ttc 用 `FontIndex=2` 取简体中文 face，霞鹜文楷、等距更纱黑体等）；若仓库根目录存在 `fonts/` 捆绑目录则优先使用（更便携，但体积约 388MB，不入库）。
+- 若需在非 Windows 环境编译，请自行安装相应字体或提供 `fonts/` 捆绑。
 
 ## 依赖与环境
 
-- **引擎**：XeLaTeX（TeX Live 2026+）
-- **中文支持**：`ctex` 宏包 + 思源宋体/黑体、霞鹜文楷
+- **引擎**：LuaHBTeX（TeX Live 2026+，`lualatex`）
+- **中文支持**：`ctex` 宏包（LuaLaTeX 下走 `luatexja`）+ 思源宋体/黑体、霞鹜文楷
 - **排版基础**：New Computer Modern 系列西文字体
 - **化学**：`mhchem` v4、`chemfig` 结构式
 - **数学**：`unicode-math` + `fontsetup`（NewCMMath）、`siunitx` 单位
 - **自定义宏包**：
   - `liTemElegXv2.4.sty` — 主样式（几何、页眉、数学、化学、表格、颜色等）
-  - `xeTemElegX.sty` — XeLaTeX 字体的 CJK 配置
+  - `LuaTemElegX.sty` — LuaLaTeX（LuaHBTeX）字体配置（luatexja + microtype + luacode），替代 `xeTemElegX`/`pTemElegX`
   - `TemEnvX.sty` — 定理/示例环境（`xmp`、`dfn`、`thm`、`rmk` 等）
   - `TemElegXcolor.sty` — 自定义颜色
   - `preamble.tex` — `\cemh{}`、`\xleq{}`、`\conc{}` 等便捷命令
+  - `.latexmkrc` — latexmk 的 lualatex 配置（输出到项目根目录）
+  - `.vscode/settings.json` — LaTeX Workshop 的 `lualatexmk` 配方
 
 ### 自定义命令速查
 

@@ -74,9 +74,11 @@ pHofVsafe[Vml_] := Module[{V = Vml/1000., nA, nB, Vt, cHA, cAminus, c, x, Kb, OH
 
 (* 绘图与输出设置 *)
 Vmax = 40; (* mL *)
+fontName = "NewComputerModernSans10";
 curve = Plot[pHofV[V], {V, 0, Vmax}, PlotRange -> {0, 14},
   AxesLabel -> {"V (mL)", "pH"}, PlotStyle -> {Thick, Black},
   GridLines -> None, ImageSize -> 700,
+  BaseStyle -> {FontFamily -> fontName}, LabelStyle -> {FontFamily -> fontName},
   PlotPoints -> 350, MaxRecursion -> 8, Exclusions -> None, PerformanceGoal -> "Quality"];
 
 (* 导出图像与表格 *)
