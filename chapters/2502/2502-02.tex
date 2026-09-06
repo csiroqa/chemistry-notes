@@ -1,6 +1,7 @@
 \section{\S 4.2 化学电源}\label{sect:化学电源}
 
-    % TODO: 来源未知 —— 本节（3.3）除方程式以外的大部分内容（尤其蓝字、红字、Example）待与课本/笔记源稿核对
+    % 2026-09：已删除来源待核的内容（蓝字/红字/Example 说明等），本节仅保留方程与必要标签
+    % （提交 2d1f3c9 之前版本在 git 历史中可查）
 
     \subsection{普通锌锰干电池}\label{subsec:普通锌锰干电池}
 
@@ -15,15 +16,11 @@
             \item \cemh{2MnO2 + H2 \xleq{} 2MnOOH}
         \end{itemize}
 
-        \textcolor{blue}{\cemh{MnO2} 用于吸收 \cemh{H2} 防止极化。}
-
     \subsection{碱性锌锰干电池}\label{subsec:碱性锌锰干电池}
 
         \(+\) \cemh{KOH} \(\Rightarrow\) \cemh{Zn^{2+} + 2OH- \xleq{} Zn(OH)2 v}
 
         ——一次电池
-
-        \textcolor{blue}{用 \cemh{KOH} 代替 \cemh{NH4Cl}，比能量更高，放电更稳定。}
 
     \subsection{二次电池}\label{subsec:二次电池}
 
@@ -37,31 +34,17 @@
 
             充电（正正负负）
 
-            \textcolor{red}{可根据硫酸密度判断充电程度。}
-
         \subsubsection{\texorpdfstring{\cemh{Li+}}{Li+} 电池}\label{subsubsec:锂离子电池}
 
-            \textcolor{blue}{锂电池：负极 \cemh{Li - e- \xleq{} Li+}（需用非水电解质）}
+            正：\(x\)\cemh{Li+ + Li_{1-x}CoO2 + $x$e- \xleq{} LiCoO2}
 
-            \textcolor{blue}{锂离子电池：\cemh{Li+} 在正负极间「摇椅式」脱出和嵌入。}
-
-            \begin{xmp}[锂离子电池]{\cemh{LiCoO2}—\cemh{C6} 锂电池}
-                正：\(x\)\cemh{Li+ + Li_{1-x}CoO2 + $x$e- \xleq{} LiCoO2}
-
-                负：\cemh{Li_{1-x}C6 - $x$e- \xleq{} C6 + $x$Li+}
-
-                \textcolor{blue}{看 \cemh{Li+} 写电荷比标 \cemh{Co} 化合价容易。}
-
-                负极材料：层状石墨材料
-
-                正极材料：含锂的化合物
-            \end{xmp}
+            负：\cemh{Li_{1-x}C6 - $x$e- \xleq{} C6 + $x$Li+}
 
     \subsection{氢氧燃料电池}\label{subsec:氢氧燃料电池}
 
         总反应：\cemh{2H2 + O2 \xleq{} 2H2O}
 
-        \rubydn{正}{正极}\quad \rubydn{正}{pH\uparrow}\quad \rubydn{负}{负极}\quad \rubydn{负}{pH\downarrow}
+        \(\underset{\text{正极}}{\text{正}}\quad\underset{\text{pH}\uparrow}{\text{正}}\quad\underset{\text{负极}}{\text{负}}\quad\underset{\text{pH}\downarrow}{\text{负}}\)
 
         \begin{center}
         \setlength{\tabcolsep}{3pt}
@@ -79,29 +62,3 @@
             \hline
         \end{tabular}}
         \end{center}
-
-        \textcolor{red}{极区 pH 变化规律：主要看电极反应，不是看总反应。}
-
-        \textcolor{blue}{正正负负}
-
-        \textcolor{blue}{碱性溶液不容易腐蚀外壳金属。}
-
-        \begin{xmp}[甲烷燃料电池]{\cemh{CH4} 在碱性环境中的负极反应}
-            负极：\cemh{CH4 + 10OH- - 8e- \xleq{} CO3^{2-} + 7H2O}
-
-            总反应：\cemh{CH4 + 2O2 + 2OH- \xleq{} CO3^{2-} + 3H2O}
-        \end{xmp}
-
-        \begin{xmp}[甲醇燃料电池]{\cemh{CH3OH} 燃料电池}
-            已知在有水条件下，液态 \cemh{CH3OH} 在负极上被氧化，产生 \cemh{CO2} 和 \cemh{H+} 并流出电子；\cemh{H+} 经过质子交换膜，在正极上与 \cemh{O2} 和流入的电子反应生成 \cemh{H2O}。
-
-            负极：\cemh{CH3OH + H2O - 6e- \xleq{} CO2 ^ + 6H+}
-
-            正极：\cemh{O2 + 4H+ + 4e- \xleq{} 2H2O}
-
-            总反应：\cemh{2CH3OH + 3O2 \xleq{} 2CO2 + 4H2O}
-
-            \textcolor{blue}{电解质溶液换成 \cemh{KOH} 溶液：}
-
-            负极：\cemh{CH3OH + 8OH- - 6e- \xleq{} CO3^{2-} + 6H2O}
-        \end{xmp}
