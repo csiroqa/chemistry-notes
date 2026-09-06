@@ -25,7 +25,9 @@
 
         \textcolor{blue}{\(\therefore\)难溶电解质的溶解平衡容易建立}
 
-        难溶物：溶解度 \(< \SI{0.01}{g}/100\text{g 水}\)
+        \begin{dfn}{难溶物}
+            难溶物：溶解度 \(< \SI{0.01}{g}/100\text{g 水}\)
+        \end{dfn}
 
         \textcolor{red}{难溶电解质，如何比较它们的溶解度大小？}
 
@@ -105,7 +107,9 @@
             
         \end{xmp}
 
-        \textcolor{blue}{同离子效应}：含有相同离子的易溶强电解质时，沉淀溶液平衡逆向移动，难溶电解质的溶解度减小。
+        \begin{dfn}{同离子效应}
+            含有相同离子的易溶强电解质时，沉淀溶解平衡逆向移动，难溶电解质的溶解度减小。
+        \end{dfn}
 
         \textcolor{red}{\(\therefore\)沉淀剂往々会加过量}
 
@@ -178,56 +182,60 @@
 
         \subsubsection{沉淀的转化}\label{subsubsec:沉淀的转化}
 
-            \makebox[20em][l]{\cemh{AgCl_{(s)} <=> Ag^+_{(aq)} + Cl^-_{(aq)}}} \(K_1 = K_\text{sp}(\cemh{AgCl})\)
+            \begin{xmp}{计算 \cemh{AgCl} 转化为 \cemh{AgI} 的进行程度}
+                \makebox[20em][l]{\cemh{AgCl_{(s)} <=> Ag^+_{(aq)} + Cl^-_{(aq)}}} \(K_1 = K_\text{sp}(\cemh{AgCl})\)
 
-            \makebox[20em][l]{\cemh{Ag^+_{(aq)} + I^-_{(aq)} <=> AgI_{(s)}}} \(K_2 = \frac{1}{K_\text{sp}(\cemh{AgI})}\)
+                \makebox[20em][l]{\cemh{Ag^+_{(aq)} + I^-_{(aq)} <=> AgI_{(s)}}} \(K_2 = \frac{1}{K_\text{sp}(\cemh{AgI})}\)
 
-            \cemh{AgCl_{(s)} + I^-_{(aq)} \xleq{} AgI_{(s)} + Cl^-_{(aq)}}
+                \cemh{AgCl_{(s)} + I^-_{(aq)} \xleq{} AgI_{(s)} + Cl^-_{(aq)}}
 
-            \textcolor{red}{该过程的进行程度有多大？}
+                \textcolor{red}{该过程的进行程度有多大？}
 
-            \textcolor{blue}{方法一}：
-            \[
-                K = \frac{\cemh{[Cl^-]}}{\cemh{[I^-]}} = \frac{\cemh{[Cl^-]}\cdot\cemh{[Ag+]}}{\cemh{[I^-]}\cdot\cemh{[Ag+]}} = \frac{K_\text{sp}(\cemh{AgCl})}{K_\text{sp}(\cemh{AgI})} = \frac{\num{1.77E-10}}{\num{8.51E-17}} = \num{2.08E6}
-            .\]
+                \textcolor{blue}{方法一}：
+                \[
+                    K = \frac{\cemh{[Cl^-]}}{\cemh{[I^-]}} = \frac{\cemh{[Cl^-]}\cdot\cemh{[Ag+]}}{\cemh{[I^-]}\cdot\cemh{[Ag+]}} = \frac{K_\text{sp}(\cemh{AgCl})}{K_\text{sp}(\cemh{AgI})} = \frac{\num{1.77E-10}}{\num{8.51E-17}} = \num{2.08E6}
+                .\]
 
-            \textcolor{blue}{方法二}：
-            \[
-                K = K_1 \times K_2 = \frac{K_\text{sp}(\cemh{AgCl})}{K_\text{sp}(\cemh{AgI})}
-            .\]
-            \textcolor{red}{\(\therefore\)该转化进行程度很大}
+                \textcolor{blue}{方法二}：
+                \[
+                    K = K_1 \times K_2 = \frac{K_\text{sp}(\cemh{AgCl})}{K_\text{sp}(\cemh{AgI})}
+                .\]
+                \textcolor{red}{\(\therefore\)该转化进行程度很大}
+            \end{xmp}
 
+            \begin{xmp}{计算 \cemh{AgI} 转化为 \cemh{Ag2S} 的进行程度}
+                \cemh{2AgI_{(s)} + S^{2-}_{(aq)} \xleq{} Ag2S_{(s)} + 2I^-_{(aq)}}
 
-            \cemh{2AgI_{(s)} + S^{2-}_{(aq)} \xleq{} Ag2S_{(s)} + 2I^-_{(aq)}}
+                \textcolor{red}{该过程的进行程度有多大？}
 
-            \textcolor{red}{该过程的进行程度有多大？}
+                \textcolor{blue}{方法一}：
+                \[
+                    K = \frac{\cemh{[I^-]}^2}{\cemh{[S^{2-}]}} = \frac{\cemh{[I^-]}^2\cdot\cemh{[Ag+]}^2}{\cemh{[S^{2-}]}\cdot\cemh{[Ag+]}^2} = \frac{(K_\text{sp}(\cemh{AgI}))^2}{K_\text{sp}(\cemh{Ag2S})} = \frac{\left(\num{8.51E-17}\right)^2}{\num{6.69E-50}} = \num{1.08E17}
+                .\]
+                \textcolor{red}{\(\therefore\)该转化进行程度极大}
 
-            \textcolor{blue}{方法一}：
-            \[
-                K = \frac{\cemh{[I^-]}^2}{\cemh{[S^{2-}]}} = \frac{\cemh{[I^-]}^2\cdot\cemh{[Ag+]}^2}{\cemh{[S^{2-}]}\cdot\cemh{[Ag+]}^2} = \frac{(K_\text{sp}(\cemh{AgI}))^2}{K_\text{sp}(\cemh{Ag2S})} = \frac{\left(\num{8.51E-17}\right)^2}{\num{6.69E-50}} = \num{1.08E17}
-            .\]
-            \textcolor{red}{\(\therefore\)该转化进行程度极大}
+                \textcolor{blue}{方法二}：
 
-            \textcolor{blue}{方法二}：
+                \makebox[20em][l]{\cemh{2AgI_{(s)} <=> 2Ag^+_{(aq)} + 2I^-_{(aq)}}} \(K_1 = (K_\text{sp}(\cemh{AgI}))^2\)
 
-            \makebox[20em][l]{\cemh{2AgI_{(s)} <=> 2Ag^+_{(aq)} + 2I^-_{(aq)}}} \(K_1 = (K_\text{sp}(\cemh{AgI}))^2\)
+                \makebox[20em][l]{\cemh{2Ag^+_{(aq)} + S^{2-}_{(aq)} <=> Ag2S_{(s)}}} \(K_2 = \frac{1}{K_\text{sp}(\cemh{Ag2S})}\)
 
-            \makebox[20em][l]{\cemh{2Ag^+_{(aq)} + S^{2-}_{(aq)} <=> Ag2S_{(s)}}} \(K_2 = \frac{1}{K_\text{sp}(\cemh{Ag2S})}\)
-
-            \[
-                K = K_1 \times K_2 = \frac{(K_\text{sp}(\cemh{AgI}))^2}{K_\text{sp}(\cemh{Ag2S})}
-            .\]
+                \[
+                    K = K_1 \times K_2 = \frac{(K_\text{sp}(\cemh{AgI}))^2}{K_\text{sp}(\cemh{Ag2S})}
+                .\]
+            \end{xmp}
 
             \textcolor{blue}{一般来说，同种离子的难溶物，溶解度小的易转化成溶解度更小的；\(K_\text{sp}\)大小相差越大，转化越完全。}
 
+            \begin{xmp}{\cemh{Mg(OH)2} 与 \cemh{FeCl3} 反应能否发生}
+                \cemh{3Mg(OH)2 + 2FeCl3 \xleq{} 3MgCl2 + 2Fe(OH)3}
 
-            \cemh{3Mg(OH)2 + 2FeCl3 \xleq{} 3MgCl2 + 2Fe(OH)3}
+                \textcolor{red}{这个反应能发生吗？进行程度大吗？}
 
-            \textcolor{red}{这个反应能发生吗？进行程度大吗？}
-
-            \[
-                K = \frac{(K_\text{sp}(\cemh{Mg(OH)2}))^3}{(K_\text{sp}(\cemh{Fe(OH)3}))^2} = \frac{\left(\num{8.45E-12}\right)^3}{\left(\num{2.79E-39}\right)^2} = \num{7.75E43}
-            .\]
+                \[
+                    K = \frac{(K_\text{sp}(\cemh{Mg(OH)2}))^3}{(K_\text{sp}(\cemh{Fe(OH)3}))^2} = \frac{\left(\num{8.45E-12}\right)^3}{\left(\num{2.79E-39}\right)^2} = \num{7.75E43}
+                .\]
+            \end{xmp}
 
             \textcolor{red}{【归纳】}
 
