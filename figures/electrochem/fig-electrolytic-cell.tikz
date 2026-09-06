@@ -1,0 +1,32 @@
+% 图：电解池一般装置（电源、阴/阳极、电解质溶液、离子迁移方向）
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small\ssans}]
+    % 电解槽与溶液
+    \draw[rounded corners=6pt] (-3.0,0) -- (-3.0,-3.2) -- (3.0,-3.2) -- (3.0,0);
+    \draw[rounded corners=6pt, fill=blue!10] (-3.0,-3.2) -- (-3.0,-1.0) -- (3.0,-1.0) -- (3.0,-3.2) -- cycle;
+    % 电极（石墨）
+    \draw[fill=black!60, draw=black!85] (-2.7,-1.05) rectangle (-2.45,-2.85);
+    \draw[fill=black!60, draw=black!85] (2.45,-1.05) rectangle (2.7,-2.85);
+    % 直流电源
+    \draw (-2.575,-1.05) -- (-2.575,1.7);
+    \draw (2.575,-1.05) -- (2.575,1.7);
+    \draw[ultra thick] (-3.3,1.7) -- (-1.85,1.7);
+    \draw[very thick] (-2.95,2.1) -- (-2.2,2.1);
+    \node[left=2pt] at (-3.15,2.1) {\textcolor{red}{$+$}};
+    \node[right=2pt] at (-2.1,2.1) {\textcolor{blue}{$-$}};
+    % 外电路电子流向
+    \draw[->,blue!60!black,very thick] (-1.75,1.35) -- (1.75,1.35) node[midway, above, font=\small] {\cemh{e-}};
+    % 离子迁移
+    \draw[->,gray!60!black,thick] (-1.55,-1.75) -- (-2.9,-2.3) node[midway, above right, font=\scriptsize] {\cemh{Cl-}};
+    \draw[->,gray!60!black,thick] (1.55,-1.75) -- (2.9,-2.3) node[midway, above left, font=\scriptsize] {\cemh{Cu^{2+}}};
+    % 气泡与产物
+    \fill[gray!60] (-2.75,-1.12) circle (0.045);
+    \fill[gray!60] (-2.9,-1.5) circle (0.045);
+    \fill[gray!60] (-2.6,-1.85) circle (0.045);
+    \node[font=\small] at (-3.25,-1.6) {\cemh{Cl2}↑};
+    \node[font=\small] at (2.45,-2.35) {红色固体 Cu};
+    % 标注
+    \node[font=\small] at (-2.575,-3.55) {阳极（\textcolor{red}{$+$}）};
+    \node[font=\small] at (2.575,-3.55) {阴极（\textcolor{blue}{$-$}）};
+    \node[font=\small] at (0,-2.6) {\cemh{CuCl2} 溶液};
+    \node[font=\footnotesize] at (0,-3.95) {阳极：\cemh{2Cl- - 2e- = Cl2 ^}\quad 阴极：\cemh{Cu^{2+} + 2e- = Cu}};
+\end{tikzpicture}

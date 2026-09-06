@@ -16,9 +16,7 @@
 \usepackage{xltabular}   % 附录 tabularx 型表格跨页
 \usepackage{rotating}    % 附录 A 周期表横向图旋转占满竖向 A4
 \usepackage{pdflscape}   % 附录 A 周期表横向整页
-% \usepackage{pdfpages}  % 附录 A（元素周期表）插入 PDF 时启用，参见 appendix/appendix-periodic.tex
-% \graphicspath{{../Pic/}{../figures/}{../images/}}
-% \raggedbottom
+\usetikzlibrary{positioning}  % 单线桥/电化学示意图（figures/electrochem）
 % —— 打印版开关 ——
 % 电子版（默认）：PDF 保留红/蓝超链接颜色；
 % 打印版：在项目根目录创建空文件 printmode.txt 后重新编译，链接颜色全部隐藏（仍可点击）。
@@ -51,15 +49,13 @@
 \newlist{datas}{itemize}{2}
 \setlist[datas]{label=\textbullet, leftmargin=1em, itemsep=2pt, topsep=3pt, parsep=0pt}
 
-% 缺失图占位（晶胞示意图等）：居中 0.35\textwidth minipage + 灰框说明 + TODO 注释
-\newcommand{\cellfigph}[2]{%
+% 晶胞示意图：居中插图 + 灰色小注（PDF 由 figures/crystal_gen.wl 生成）
+\newcommand{\cellfig}[2]{%
     \begin{center}
-    \begin{minipage}[t]{0.35\textwidth}
-        \centering
-        \fbox{\parbox[c][5em][c]{0.9\linewidth}{\centering\footnotesize\textcolor{gray}{#1}}}%
-    \end{minipage}
-    \end{center}
-    % TODO: #2
+        \includegraphics[width=0.30\textwidth]{figures/crystal/#1.pdf}%
+        \\[3pt]
+        \footnotesize\textcolor{gray}{#2}%
+    \end{center}%
 }
 
 

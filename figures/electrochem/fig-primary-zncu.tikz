@@ -1,0 +1,27 @@
+% 图：Zn-Cu 原电池（稀硫酸，单液；Zn－，Cu＋，外接电流表）
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small\ssans}]
+    % 烧杯
+    \draw[rounded corners=8pt] (-2.1,0) -- (-2.1,-3.3) -- (2.1,-3.3) -- (2.1,0);
+    % 稀硫酸
+    \draw[rounded corners=8pt, fill=blue!8] (-2.1,-3.3) -- (-2.1,-1.0) -- (2.1,-1.0) -- (2.1,-3.3) -- cycle;
+    % 电极
+    \draw[fill=gray!55, draw=black!70] (-1.7,-1.05) rectangle (-1.45,-2.95);
+    \draw[fill=black!60, draw=black!80] (1.45,-1.05) rectangle (1.7,-2.95);
+    % 导线与电流表
+    \draw (-1.575,-1.05) -- (-1.575,0.9);
+    \draw (1.575,-1.05) -- (1.575,0.9);
+    \draw (-1.575,0.9) -- (-0.5,0.9) (0.5,0.9) -- (1.575,0.9);
+    \draw[fill=white] (-0.5,0.9) circle (0.45);
+    \node at (0,0.9) {A};
+    % 电子流向（外电路）
+    \draw[->,blue!60!black,very thick] (-1.35,1.35) -- (1.2,1.35);
+    \node[blue!60!black] at (0,1.62) {\cemh{e-}};
+    % 标注
+    \node[left=1pt] at (-1.575,-1.6) {Zn（\textcolor{blue}{$-$}）};
+    \node[right=1pt] at (1.575,-1.6) {Cu（\textcolor{blue}{$+$}）};
+    \node at (0,-3.0) {稀硫酸};
+    \node[font=\small] at (0,-3.7) {\cemh{Zn - 2e- = Zn^{2+}}\quad \cemh{2H+ + 2e- = H2 ^}};
+    % 电极反应离子箭头（溶液中）
+    \draw[->,gray!70,thick] (-1.575,-2.6) -- (-1.15,-1.35) node[midway,left,font=\scriptsize] {Zn\textsuperscript{2+}};
+    \draw[->,gray!70,thick] (1.575,-2.7) -- (1.2,-1.4) node[midway,right,font=\scriptsize] {H\textsuperscript{+}};
+\end{tikzpicture}

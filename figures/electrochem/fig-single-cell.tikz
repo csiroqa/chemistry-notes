@@ -1,0 +1,25 @@
+% 图：单液原电池（Zn 与 Cu²⁺ 直接接触，电流不稳定）
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small\ssans}]
+    % 烧杯与 CuSO4 溶液
+    \draw[rounded corners=8pt] (-2.1,0) -- (-2.1,-3.3) -- (2.1,-3.3) -- (2.1,0);
+    \draw[rounded corners=8pt, fill=blue!18] (-2.1,-3.3) -- (-2.1,-1.0) -- (2.1,-1.0) -- (2.1,-3.3) -- cycle;
+    % 电极（单液：Zn、Cu 同液，Zn 表面直接置换）
+    \draw[fill=gray!55, draw=black!70] (-1.7,-1.05) rectangle (-1.45,-2.95);
+    \draw[fill=black!60, draw=black!80] (1.45,-1.05) rectangle (1.7,-2.95);
+    \draw[fill=black!60, draw=black!80] (-1.1,-2.95) rectangle (-0.85,-2.5);
+    % 导线与电流表
+    \draw (-1.575,-1.05) -- (-1.575,0.9);
+    \draw (1.575,-1.05) -- (1.575,0.9);
+    \draw (-1.575,0.9) -- (-0.5,0.9) (0.5,0.9) -- (1.575,0.9);
+    \draw[fill=white] (-0.5,0.9) circle (0.45);
+    \node at (0,0.9) {A};
+    \draw[->,blue!60!black,very thick] (-1.35,1.35) -- (1.2,1.35);
+    \node[blue!60!black] at (0,1.62) {\cemh{e-}};
+    % 标注
+    \node[left=1pt] at (-1.575,-1.6) {Zn（\textcolor{blue}{$-$}）};
+    \node[right=1pt] at (1.575,-1.6) {Cu（\textcolor{blue}{$+$}）};
+    \node[font=\scriptsize, text=black!70] at (0,-1.35) {\cemh{Zn + Cu^{2+}} 直接置换};
+    \node[font=\scriptsize, gray!60!black] at (-1.0,-2.75) {置换出的 Cu};
+    \node at (0,-3.0) {\cemh{CuSO4} 溶液};
+    \node[font=\small\ssans, text=red] at (0,-3.7) {Zn 与 \cemh{Cu^{2+}} 直接接触，电流不稳定};
+\end{tikzpicture}

@@ -1,0 +1,25 @@
+% 图：外加电流的阴极保护法（钢制闸门接电源负极，辅助阳极接正极）
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small\ssans}]
+    % 水面与海水
+    \draw[blue!20!black, thick] (-3.8,0) -- (3.8,0);
+    \fill[blue!12] (-3.8,0) rectangle (3.8,-2.8);
+    \node[font=\small] at (0,-2.45) {海水};
+    % 钢制闸门（阴极）与辅助阳极（石墨）
+    \draw[fill=gray!55, draw=black!75] (-2.9,-0.35) rectangle (-2.0,-2.6);
+    \draw[fill=black!70, draw=black!85] (2.0,-0.35) rectangle (2.9,-2.0);
+    % 直流电源
+    \draw (-2.45,-0.35) -- (-2.45,1.2);
+    \draw (2.45,-0.35) -- (2.45,1.2);
+    \draw[ultra thick] (-3.05,1.2) -- (-1.85,1.2);
+    \draw[very thick] (-2.75,1.6) -- (-2.15,1.6);
+    \node[left=2pt] at (-2.9,1.6) {\textcolor{blue}{$-$}};
+    \node[right=2pt] at (-2.0,1.6) {\textcolor{red}{$+$}};
+    % 电子流向：阴极(Fe) ← 电源负极；阳极 → 电源正极（外电路）
+    \draw[->,blue!60!black,very thick] (1.9,0.85) -- (-1.9,0.85) node[midway, above, font=\small] {\cemh{e-}};
+    % 海水中的电流方向（阳离子 → 阴极）
+    \draw[->,gray!60!black,thick] (1.6,-1.6) -- (-1.6,-1.6) node[midway, below, font=\scriptsize] {\cemh{K+} 移向闸门};
+    % 标注
+    \node[font=\small] at (-2.45,-2.9) {钢制闸门（阴极，\textcolor{blue}{$-$}）};
+    \node[font=\small] at (2.45,-2.3) {辅助阳极（石墨，\textcolor{red}{$+$}）};
+    \node[font=\footnotesize] at (0,-3.3) {铁闸门被强制作为阴极，电子不断流入，\textcolor{red}{防止 Fe 失电子被腐蚀}};
+\end{tikzpicture}

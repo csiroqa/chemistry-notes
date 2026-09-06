@@ -2,7 +2,9 @@
 
     \subsection{Zn-Cu 原电池}\label{subsec:ZnCu原电池}
 
-        % [IMAGE: Zn-Cu 原电池示意图，左电极 Zn（－），右电极 Cu（＋），外接电流表 A，电解质为稀硫酸]
+        \begin{center}
+        \input{figures/electrochem/fig-primary-zncu.tikz}
+        \end{center}
 
         \cemh{Cu}：\textbf{正极}
 
@@ -20,14 +22,6 @@
         电子：负极（\cemh{Zn}）\(\to\) 正极（\cemh{Cu}）（导线）
 
         盐桥：离子导体，平衡电荷
-
-        \textcolor{blue}{\cemh{H+} 在正极得 \cemh{e-} 无阻更快}
-
-        \textcolor{blue}{纯 \cemh{Zn}：理论无气泡}
-
-        \textcolor{blue}{粗 \cemh{Zn}：速率快}
-
-        \textcolor{red}{电极 = 电极材料 + 与电极接触的物质}
 
     \subsection{构成原电池的条件}\label{subsec:构成原电池条件}
 
@@ -48,13 +42,24 @@
 
     \subsection{单液原电池与双液原电池}\label{subsec:单液双液原电池}
 
-        单液原电池：
+        \noindent
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            单液原电池\\[2pt]
+            \resizebox{0.98\linewidth}{!}{\input{figures/electrochem/fig-single-cell.tikz}}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            双液原电池\\[2pt]
+            \resizebox{0.98\linewidth}{!}{\input{figures/electrochem/fig-double-cell.tikz}}
+        \end{minipage}
 
-        % [IMAGE: 单液原电池示意图]
+        基于 \cemh{Zn + Cu^{2+} \xleq{} Cu + Zn^{2+}} 设计双液原电池：
 
-        双液原电池：
+        氧化：\cemh{Zn - 2e- \xleq{} Zn^{2+}}
 
-        % [IMAGE: 双液原电池示意图，标注：Zn、Cu、KNO₃、ZnSO₄、CuSO₄、盐桥]
+        还原：\cemh{Cu^{2+} + 2e- \xleq{} Cu}
 
     \subsection{离子交换膜}\label{subsec:离子交换膜}
 
@@ -64,11 +69,13 @@
             \item 质子交换膜：只允许 \cemh{H+}
         \end{enumerate}
 
-        基于 \cemh{Zn + Cu^{2+} \xleq{} Cu + Zn^{2+}} 设计双液原电池：
+        \textcolor{blue}{\cemh{H+} 在正极得 \cemh{e-} 无阻更快}
 
-        氧化：\cemh{Zn - 2e- \xleq{} Zn^{2+}}
+        \textcolor{blue}{纯 \cemh{Zn}：理论无气泡}
 
-        还原：\cemh{Cu^{2+} + 2e- \xleq{} Cu}
+        \textcolor{blue}{粗 \cemh{Zn}：速率快}
+
+        \textcolor{red}{电极 = 电极材料 + 与电极接触的物质}
 
     \subsection{浓差电池}\label{subsec:浓差电池}
 

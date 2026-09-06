@@ -1,0 +1,23 @@
+% 图：铁的吸氧腐蚀（食盐水 + 酚酞 + 赤血盐；铁丝两端红、中段蓝）
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small\ssans}]
+    % 培养皿（俯视）
+    \draw[rounded corners=14pt] (-4.0,0) rectangle (4.0,-2.9);
+    \draw[rounded corners=14pt, fill=blue!6] (-3.8,-0.2) rectangle (3.8,-2.7);
+    % 铁丝（中段 Fe²⁺ 变蓝，两端 O₂ 多、OH⁻ 变红）
+    \draw[fill=gray!60, draw=black!75] (-2.6,-1.1) rectangle (2.6,-1.9);
+    \draw[fill=gray!85, draw=black!75] (2.6,-1.1) -- (3.4,-1.05) -- (3.4,-1.95) -- (2.6,-1.9) -- cycle;
+    \draw[fill=gray!85, draw=black!75] (-2.6,-1.1) -- (-3.4,-1.05) -- (-3.4,-1.95) -- (-2.6,-1.9) -- cycle;
+    % 中段铁溶解区（蓝色滕氏蓝）与两端变红区（酚酞）
+    \fill[blue!45] (-1.9,-1.25) rectangle (1.9,-1.75);
+    \fill[red!60] (-3.35,-1.15) ellipse (0.28 and 0.75);
+    \fill[red!60] (3.35,-1.15) ellipse (0.28 and 0.75);
+    % 区域标注
+    \node[font=\scriptsize] at (0,-2.35) {\textcolor{blue!70!black}{蓝色：\cemh{Fe^{2+}} 与 \cemh{K3[Fe(CN)6]} 反应（Fe 溶解区）}};
+    \node[font=\scriptsize] at (-2.8,-0.55) {\textcolor{red!80!black}{红色：\cemh{OH-}（\cemh{O2} 较多端）}};
+    % 溶解氧方向
+    \draw[->,gray!70,thick] (-3.3,-0.45) .. controls (-2.0,-0.3) and (2.0,-0.3) .. (3.3,-0.45);
+    \node[font=\scriptsize, gray!70!black] at (0,-0.2) {\cemh{O2} 先与金属接触（两端）};
+    % 溶液标注
+    \node[font=\small] at (0,-3.25) {食盐水（含酚酞与 \cemh{K3[Fe(CN)6]}）};
+    \node[font=\footnotesize] at (0,-3.7) {负极区：\cemh{Fe - 2e- = Fe^{2+}}（变蓝）\quad 正极区：\cemh{O2 + 2H2O + 4e- = 4OH-}（变红）};
+\end{tikzpicture}

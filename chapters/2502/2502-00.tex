@@ -25,10 +25,29 @@
             还原性：还原剂 \(>\) 还原产物
 
             \begin{xmp}[强弱律例]{\cemh{NaClO + HCl}}
-                \cemh{NaClO + 2HCl \xleq{} NaCl + Cl2 ^ + H2O}
-
-                % TODO: 标注单线桥 —— 箭头从 HCl 中的 Cl 指向 NaClO 中的 Cl，转移 1 e⁻
-                % （无现成标注宏包时的占位说明：可改用 tikz 覆盖或在讲义中手绘标注）
+                \begin{center}
+                \begin{tikzpicture}[
+                    baseline=(na.base),
+                    every node/.style={inner sep=0pt}
+                ]
+                    \node (na)  {$\mathrm{Na}$};
+                    \node[base right=0.16em of na]  (clo)   {$\overset{+1}{\mathrm{Cl}}$};
+                    \node[base right=0.16em of clo] (o)     {$\mathrm{O}$};
+                    \node[base right=0.8em of o]    (plus1) {$+$};
+                    \node[base right=0.8em of plus1](h)     {$2\mathrm{H}$};
+                    \node[base right=0.16em of h]   (cl3)   {$\overset{-1}{\mathrm{Cl}}$};
+                    \node[base right=0.9em of cl3]  (eq)    {$\xleq{}$};
+                    \node[base right=0.9em of eq]   (pna)   {$\mathrm{NaCl}$};
+                    \node[base right=0.9em of pna]  (pplus) {$+$};
+                    \node[base right=0.9em of pplus](pcl)   {$\mathrm{Cl_2}\!\uparrow$};
+                    \node[base right=0.9em of pcl]  (pp2)   {$+$};
+                    \node[base right=0.9em of pp2]  (ph2o)  {$\mathrm{H_2O}$};
+                    \draw[->, red, thick, shorten >= 2pt, shorten <= 2pt]
+                        (cl3.north) to[out=85, in=85, looseness=1.4]
+                        node[above, font=\footnotesize\bfseries, text=red] {$1\,\mathrm{e^-}$}
+                        (clo.north);
+                \end{tikzpicture}
+                \end{center}
 
                 \textcolor{red}{HCl 既做还原剂又体现酸性。}
             \end{xmp}

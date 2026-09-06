@@ -1,0 +1,28 @@
+% 图：电解精炼铜（粗铜阳极 + 精铜阴极 + 硫酸酸化的 CuSO4 溶液）
+\begin{tikzpicture}[x=1cm, y=1cm, every node/.style={font=\small\ssans}]
+    % 电解槽
+    \draw[rounded corners=6pt] (-3.2,0) -- (-3.2,-3.2) -- (3.2,-3.2) -- (3.2,0);
+    \draw[rounded corners=6pt, fill=blue!15] (-3.2,-3.2) -- (-3.2,-1.0) -- (3.2,-1.0) -- (3.2,-3.2) -- cycle;
+    % 电极：阳极（粗铜，左）与阴极（精铜，右）
+    \draw[fill=gray!45, draw=black!70] (-2.9,-1.05) rectangle (-2.0,-2.95);
+    \draw[fill=black!55, draw=black!80] (2.0,-1.05) rectangle (2.9,-2.95);
+    % 阳极泥
+    \fill[brown!70, draw=brown!90!black] (-2.45,-3.08) ellipse (0.78 and 0.14);
+    \node[font=\footnotesize, brown!80!black] at (-0.6,-3.12) {阳极泥（\cemh{Ag}、\cemh{Au}、\cemh{Pt} 等）};
+    % 直流电源
+    \draw (-2.45,-1.05) -- (-2.45,1.7);
+    \draw (2.45,-1.05) -- (2.45,1.7);
+    \draw[ultra thick] (-3.1,1.7) -- (-1.8,1.7);
+    \draw[very thick] (-2.8,2.1) -- (-2.1,2.1);
+    \node[left=2pt] at (-2.95,2.1) {\textcolor{red}{$+$}};
+    \node[right=2pt] at (-2.05,2.1) {\textcolor{blue}{$-$}};
+    % 外电路电子流向
+    \draw[->,blue!60!black,very thick] (-1.65,1.35) -- (1.65,1.35) node[midway, above, font=\small] {\cemh{e-}};
+    % 溶液中离子移动
+    \draw[->,gray!60!black,thick] (-1.7,-1.75) -- (1.7,-1.75) node[midway, below, font=\scriptsize] {\cemh{Cu^{2+}} 移向阴极};
+    \node[font=\small] at (0,-2.35) {\cemh{CuSO4}（\cemh{H2SO4} 酸化）溶液};
+    % 标注
+    \node[font=\small] at (-2.45,-3.55) {粗铜（阳极，\textcolor{red}{$+$}）};
+    \node[font=\small] at (2.45,-3.55) {精铜（阴极，\textcolor{blue}{$-$}）};
+    \node[font=\footnotesize] at (0,-3.95) {阳极：\cemh{Cu - 2e- = Cu^{2+}}\quad 阴极：\cemh{Cu^{2+} + 2e- = Cu}};
+\end{tikzpicture}
