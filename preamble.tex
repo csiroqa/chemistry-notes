@@ -19,8 +19,15 @@
 % \usepackage{pdfpages}  % 附录 A（元素周期表）插入 PDF 时启用，参见 appendix/appendix-periodic.tex
 % \graphicspath{{../Pic/}{../figures/}{../images/}}
 % \raggedbottom
+% —— 打印版开关 ——
+% 电子版（默认）：PDF 保留红/蓝超链接颜色；
+% 打印版：在项目根目录创建空文件 printmode.txt 后重新编译，链接颜色全部隐藏（仍可点击）。
+\newif\ifprintversion
+\IfFileExists{printmode.txt}{\printversiontrue}{}
+\ifprintversion
+    \hypersetup{hidelinks}
+\fi
 \hypersetup{ %
-    hidelinks,    % 打印版不显示超链接颜色/边框（链接仍可点击）
     pdftitle = {} , % PDFのタイトル
     pdfauthor = {} , % PDFの作成者
     pdfsubject = {上海市进才中学化学笔记},    % 主題
@@ -43,6 +50,17 @@
 % 附录数据清单：逐条独立数据，需适度行距（\setlist{nosep} 全局压平后在此恢复）
 \newlist{datas}{itemize}{2}
 \setlist[datas]{label=\textbullet, leftmargin=1em, itemsep=2pt, topsep=3pt, parsep=0pt}
+
+% 缺失图占位（晶胞示意图等）：居中 0.35\textwidth minipage + 灰框说明 + TODO 注释
+\newcommand{\cellfigph}[2]{%
+    \begin{center}
+    \begin{minipage}[t]{0.35\textwidth}
+        \centering
+        \fbox{\parbox[c][5em][c]{0.9\linewidth}{\centering\footnotesize\textcolor{gray}{#1}}}%
+    \end{minipage}
+    \end{center}
+    % TODO: #2
+}
 
 
 \title{化学笔记}

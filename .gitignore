@@ -29,3 +29,5 @@
 *.xdv
 *.spl
 *.synctex(busy)
+# 打印版标记文件（存在时超链接颜色隐藏）
+printmode.txt
