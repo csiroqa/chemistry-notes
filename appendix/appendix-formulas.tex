@@ -3,29 +3,29 @@
     \section{pH 与溶液酸碱性的计算}\label{app:公式-pH}
 
         \begin{itemize}
-            \item \(\cemh{pH} = -\lg{}\cemh{[H+]}\)，\(\cemh{pOH} = -\lg{}\cemh{[OH-]}\)，适用范围 \numrange{0}{14}。
-            \item 水的离子积：\(K_\text{W} = \cemh{[H+]} \cdot \cemh{[OH-]}\)（常温 \(\num{1E-14}\)），\(\cemh{[H+]} = \dfrac{K_\text{W}}{\cemh{[OH-]}}\)。
-            \item 强酸、强碱每稀释 10 倍，\cemh{[H+]}、\cemh{[OH-]} 变化 10 倍，pH 改变 1；\textcolor{red}{酸不会稀释成碱、碱不会稀释成酸，pH 最终逼近 7}。
-            \item 酸碱混合先判断过量：酸过量算 \cemh{[H+]}（再求 pH），碱过量算 \cemh{[OH-]}（再求 pH）。
-            \item 若反应不涉及 \cemh{H+}、\cemh{[OH-]}，相当于稀释。
+            \item \(\cemh{pH} = -\lg{}\cemh{[H+]}\)，\(\cemh{pOH} = -\lg{}\cemh{[OH^-]}\)，适用范围 \numrange{0}{14}。
+            \item 水的离子积：\(K_\text{W} = \cemh{[H+]} \cdot \cemh{[OH^-]}\)（常温 \(\num{1E-14}\)），\(\cemh{[H+]} = \dfrac{K_\text{W}}{\cemh{[OH^-]}}\)。
+            \item 强酸、强碱每稀释 10 倍，\cemh{[H+]}、\cemh{[OH^-]} 变化 10 倍，pH 改变 1；\textcolor{red}{酸不会稀释成碱、碱不会稀释成酸，pH 最终逼近 7}。
+            \item 酸碱混合先判断过量：酸过量算 \cemh{[H+]}（再求 pH），碱过量算 \cemh{[OH^-]}（再求 pH）。
+            \item 若反应不涉及 \cemh{H+}、\cemh{[OH^-]}，相当于稀释。
             \item 非常温下先由中性溶液的 pH 算出该温度下 \(K_\text{W}\)，其余计算同前。
         \end{itemize}
 
     \section{弱电解质的电离平衡}\label{app:公式-电离平衡}
 
-        \subsubsection{\texorpdfstring{电离度 \(\alpha\)}{电离度}}
+        \subsection{\texorpdfstring{电离度 \(\alpha\)}{电离度}}
 
             \[
                 \alpha = \frac{\text{已电离的分子数}}{\text{分子总数}} \times \SI{100}{\percent} = \frac{\cemh{[H+]}}{c} \times \SI{100}{\percent}
             \]
 
-        \subsubsection{\texorpdfstring{电离常数 \(K_\text{a}\)}{电离常数}}
+        \subsection{\texorpdfstring{电离常数 \(K_\text{a}\)}{电离常数}}
 
             对于 \cemh{HA <=> H+ + A-}：\[
-                K_\text{a} = \frac{\cemh{[H+]} \cdot \cemh{[A-]}}{\cemh{[HA]}}
+                K_\text{a} = \frac{\cemh{[H+]} \cdot \cemh{[A^-]}}{\cemh{[HA]}}
             \]
 
-        \subsubsection{\texorpdfstring{近似计算（\(\frac{c}{K_\text{a}} \ge 400\)）}{近似计算}}
+        \subsection{\texorpdfstring{近似计算（\(\frac{c}{K_\text{a}} \ge 400\)）}{近似计算}}
 
             \[
                 \cemh{[H+]} = \sqrt{cK_\text{a}} \qquad \alpha = \sqrt{\frac{K_\text{a}}{c}}
@@ -35,20 +35,20 @@
 
     \section{盐类水解}\label{app:公式-水解}
 
-        \subsubsection{\texorpdfstring{水解度 \(h\)}{水解度}}
+        \subsection{\texorpdfstring{水解度 \(h\)}{水解度}}
 
             \[
-                h = \frac{\text{已水解的离子数}}{\text{离子总数}} \times \SI{100}{\percent} = \frac{\cemh{[OH-]}}{c} \times \SI{100}{\percent}
+                h = \frac{\text{已水解的离子数}}{\text{离子总数}} \times \SI{100}{\percent} = \frac{\cemh{[OH^-]}}{c} \times \SI{100}{\percent}
             \]
 
-        \subsubsection{\texorpdfstring{水解常数 \(K_\text{h}\)}{水解常数}}
+        \subsection{\texorpdfstring{水解常数 \(K_\text{h}\)}{水解常数}}
 
-            对于 \cemh{A- + H2O <=> HA + OH-}：\[
-                K_\text{h} = \frac{\cemh{[HA]} \cdot \cemh{[OH-]}}{\cemh{[A-]}} = \frac{K_\text{W}}{K_\text{a}}
+            对于 \cemh{A- + H2O <=> HA + OH^-}：\[
+                K_\text{h} = \frac{\cemh{[HA]} \cdot \cemh{[OH^-]}}{\cemh{[A^-]}} = \frac{K_\text{W}}{K_\text{a}}
             \]
 
             近似计算：\[
-                \cemh{[OH-]} = \sqrt{cK_\text{h}} \qquad h = \sqrt{\frac{K_\text{h}}{c}}
+                \cemh{[OH^-]} = \sqrt{cK_\text{h}} \qquad h = \sqrt{\frac{K_\text{h}}{c}}
             \]
 
             \textcolor{red}{盐浓度越大，水解度越小（越稀越水解）。}
@@ -57,13 +57,13 @@
 
     \section{沉淀溶解平衡}\label{app:公式-溶度积}
 
-        \subsubsection{\texorpdfstring{溶度积 \(K_\text{sp}\)}{溶度积}}
+        \subsection{\texorpdfstring{溶度积 \(K_\text{sp}\)}{溶度积}}
 
             对于 \cemh{A_mB_n(s) <=> mA^{n+} + nB^{m-}}：\[
                 K_\text{sp} = \cemh{[A^{n+}]}^m \cdot \cemh{[B^{m-}]}^n
             \]
 
-        \subsubsection{溶度积规则}
+        \subsection{溶度积规则}
 
             \begin{itemize}
                 \item \(Q < K_\text{sp}\)：无沉淀析出。
@@ -71,7 +71,7 @@
                 \item \(Q > K_\text{sp}\)：有沉淀析出，直至达到平衡。
             \end{itemize}
 
-        \subsubsection{\texorpdfstring{溶解度 \(s\) 与 \(K_\text{sp}\)}{溶解度与溶度积}}
+        \subsection{\texorpdfstring{溶解度 \(s\) 与 \(K_\text{sp}\)}{溶解度与溶度积}}
 
             \begin{datas}
                 \item \cemh{AB} 型（如 \cemh{AgCl}、\cemh{BaSO4}）：\(s = \sqrt{K_\text{sp}}\)。
@@ -80,7 +80,7 @@
 
             \textcolor{blue}{同类型难溶电解质，\(K_\text{sp}\) 越小溶解度越小。}
 
-        \subsubsection{沉淀转化与沉淀溶解的平衡常数}
+        \subsection{沉淀转化与沉淀溶解的平衡常数}
 
             沉淀转化（如 \cemh{AgCl + I- \xleq{} AgI + Cl-}）：\[
                 K = \frac{K_\text{sp}(\text{前沉淀})^\text{幂次方}}{K_\text{sp}(\text{后沉淀})^\text{幂次方}}
@@ -102,15 +102,15 @@
         \begin{itemize}
             \item \textcolor{red}{电荷守恒}：溶液中正电荷总数 \(=\) 负电荷总数（记得乘电荷数）。如 \(\cemh{Na2CO3}\) 溶液中：
             \[
-                \cemh{[Na+]} + \cemh{[H+]} = \cemh{[OH-]} + \cemh{[HCO3-]} + 2\cemh{[CO3^{2-}]}
+                \cemh{[Na+]} + \cemh{[H+]} = \cemh{[OH^-]} + \cemh{[HCO3^-]} + 2\cemh{[CO3^{2-}]}
             \]
             \item \textcolor{red}{物料守恒}：元素总量守恒（微粒要找全）。如 \(\cemh{Na2CO3}\) 溶液中：
             \[
-                \cemh{[Na+]} = 2\left(\cemh{[CO3^{2-}]} + \cemh{[HCO3-]} + \cemh{[H2CO3]}\right)
+                \cemh{[Na+]} = 2\left(\cemh{[CO3^{2-}]} + \cemh{[HCO3^-]} + \cemh{[H2CO3]}\right)
             \]
             \item \textcolor{red}{质子守恒}：由电荷守恒与物料守恒叠加得到。如 \(\cemh{Na2CO3}\) 溶液中：
             \[
-                \cemh{[OH-]} = \cemh{[H+]} + \cemh{[HCO3-]} + 2\cemh{[H2CO3]}
+                \cemh{[OH^-]} = \cemh{[H+]} + \cemh{[HCO3^-]} + 2\cemh{[H2CO3]}
             \]
         \end{itemize}
 
@@ -127,12 +127,12 @@
         \begin{itemize}
             \item \textcolor{red}{电子守恒}：电极上得电子总数 \(=\) 失电子总数（配平及计算依据）。
             \item 配平依据：化合价升降总数相等；离子方程式顺序——电子守恒 \(\to\) 电荷守恒 \(\to\) 原子守恒。
-            \item \textcolor{red}{极区 pH 变化看电极反应，不看总反应}（如电解 \cemh{NaCl} 阴极区生成 \cemh{OH-}，pH 增大）。
+            \item \textcolor{red}{极区 pH 变化看电极反应，不看总反应}（如电解 \cemh{NaCl} 阴极区生成 \cemh{OH^-}，pH 增大）。
         \end{itemize}
 
     \section{晶体结构}\label{app:公式-晶体}
 
-        \subsubsection{晶体密度计算}
+        \subsection{晶体密度计算}
 
             \[
                 \rho = \frac{\text{晶胞质量}}{\text{晶胞体积}}
@@ -141,13 +141,13 @@
 
             \textcolor{blue}{思路：根据晶胞结构确定各种微粒数目 \(\to\) 晶胞质量 \(\to\) 密度 \(=\) 晶胞质量 \(\div\) 晶胞体积。已知微粒半径时，由半径先求晶胞边长。}
 
-        \subsubsection{晶胞中粒子数的计算（均摊法）}
+        \subsection{晶胞中粒子数的计算（均摊法）}
 
             \[
                 \text{粒子数} = \text{顶角} \times \frac{1}{8} + \text{棱上} \times \frac{1}{4} + \text{面心} \times \frac{1}{2} + \text{体心} \times 1
             \]
 
-        \subsubsection{空间利用率}
+        \subsection{空间利用率}
 
             \begin{datas}
                 \item 简单立方堆积：\SI{52.36}{\percent}
