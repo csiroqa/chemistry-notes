@@ -90,7 +90,8 @@ latexmk -lualatex -synctex=1 -outdir=TexMP main.tex
 | `\SI{...}`           | 带单位数值                                   | `\SI{0.1}{\mole\per\litre}` |
 | `\Circled{1}`        | 带圈数字                                     | `\Circled{1}`               |
 | `\cmark` / `\hcmark` | 对勾 / 粗对勾                                |                             |
-| `\cellfigph{说明}{TODO}` | 缺失图占位（0.35\textwidth 居中 minipage + 灰框 + TODO 注释） | `\cellfigph{NaCl 晶胞示意图（待补）}{绘制…}` |
+| `\cellfig{文件}{说明}` | 晶胞/位置贡献实图（`figures/crystal/*.pdf`，Mathematica 生成） | `\cellfig{cell-na-cl}{Cl⁻（绿）与 Na⁺（紫）}` |
+| `\input{figures/electrochem/*.tikz}` | 电化学装置 TikZ 示意图（电解池/精炼铜/氯碱/保护法等） | `\input{figures/electrochem/fig-electrolytic-cell.tikz}` |
 
 上下标注（ruby）统一使用文档惯例：`\overset{\text{标注}}{\text{正文}}`（上加字）与 `\underset{\text{标注}}{\text{正文}}`（下加字）。
 
@@ -110,6 +111,7 @@ latexmk -lualatex -synctex=1 -outdir=TexMP main.tex
 │   ├── 2502.tex           # 第二学期章入口
 │   └── 2502/              # 第二学期各节（晶体＋电化学）
 ├── appendix/              # 附录（A 周期表、B 常用数据、C 知识清单、D 公式清单）
+├── figures/               # 插图源（crystal/ 晶胞 PDF；electrochem/ 电化学装置 TikZ）
 ├── 2501notes/             # 第一学期手写扫描 PDF 源
 ├── 2502notes/             # 第二学期手写扫描 PDF 源
 ├── .book/                 # 人教版教科书 PDF（参考）
