@@ -1,0 +1,21 @@
+% CsCl 晶胞（描图 PPT slide34）：粉 Cs⁺（体心）、绿 Cl⁻（顶角）、浅青线框
+\begin{tikzpicture}[
+    x={(2.26cm,1.30cm)}, y={(-2.26cm,1.30cm)}, z={(0cm,2.60cm)},
+    line width=0.9pt, color=cyan!45!black,
+]
+    \draw (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
+    \draw (0,0,0) -- (0,0,1) (1,0,0) -- (1,0,1) (0,1,0) -- (0,1,1);
+    \draw (0,0,0) -- (1,0,0) (0,0,0) -- (0,1,0);
+    \draw[dashed] (1,0,0) -- (1,1,0) (0,1,0) -- (1,1,0) (1,1,0) -- (1,1,1);
+    % Cl⁻（绿）
+    \cellatom{green!45!black}{0}{0}{0}{0.38}
+    \cellatom{green!45!black}{1}{0}{0}{0.38}
+    \cellatom{green!60!white}{0}{1}{0}{0.38}
+    \cellatom{green!60!white}{1}{1}{0}{0.38}
+    \cellatom{green!45!black}{0}{0}{1}{0.38}
+    \cellatom{green!45!black}{1}{0}{1}{0.38}
+    \cellatom{green!60!white}{0}{1}{1}{0.38}
+    \cellatom{green!60!white}{1}{1}{1}{0.38}
+    % Cs⁺（粉，体心）
+    \cellatom{pink!70!red}{0.5}{0.5}{0.5}{0.50}
+\end{tikzpicture}

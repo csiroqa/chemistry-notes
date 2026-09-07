@@ -1,0 +1,12 @@
+% 均摊法-棱上（描图 PPT slide28）：等测线框晶胞 + 青球在棱中点 + 图上 1/4 标注
+\begin{tikzpicture}[
+    x={(2.26cm,1.30cm)}, y={(-2.26cm,1.30cm)}, z={(0cm,2.60cm)},
+    line width=0.9pt,
+]
+    \draw (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
+    \draw (0,0,0) -- (0,0,1) (1,0,0) -- (1,0,1) (0,1,0) -- (0,1,1);
+    \draw (0,0,0) -- (1,0,0) (0,0,0) -- (0,1,0);
+    \draw[dashed] (1,0,0) -- (1,1,0) (0,1,0) -- (1,1,0) (1,1,0) -- (1,1,1);
+    \cellatom{teal!65!black}{0.5}{0}{0}{0.55}
+    \node[blue!60!black, font=\scriptsize] at (canvas cs:x=2.15cm, y=1.05cm) {\(1/4\)};
+\end{tikzpicture}

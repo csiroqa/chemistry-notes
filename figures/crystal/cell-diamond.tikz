@@ -1,0 +1,51 @@
+% 金刚石晶胞（描图 PPT slide40）：黑灰 C 球 + C–C 键；红色正四面体高亮
+\begin{tikzpicture}[
+    x={(2.26cm,1.30cm)}, y={(-2.26cm,1.30cm)}, z={(0cm,2.60cm)},
+    line width=0.9pt,
+]
+    \draw (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
+    \draw (0,0,0) -- (0,0,1) (1,0,0) -- (1,0,1) (0,1,0) -- (0,1,1);
+    \draw (0,0,0) -- (1,0,0) (0,0,0) -- (0,1,0);
+    \draw[dashed] (1,0,0) -- (1,1,0) (0,1,0) -- (1,1,0) (1,1,0) -- (1,1,1);
+    % 红色正四面体：内部 C (1/4,1/4,1/4) 与其 4 个近邻
+    \draw[red!80!black, line width=1.3pt] (0.25,0.25,0.25) -- (0,0,0);
+    \draw[red!80!black, line width=1.3pt] (0.25,0.25,0.25) -- (0.5,0.5,0);
+    \draw[red!80!black, line width=1.3pt] (0.25,0.25,0.25) -- (0.5,0,0.5);
+    \draw[red!80!black, line width=1.3pt] (0.25,0.25,0.25) -- (0,0.5,0.5);
+    % 其余晶胞内 C–C 键（灰细线）
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.25) -- (1,1,0);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.25) -- (0.5,0.5,0);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.25) -- (1,0.5,0.5);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.25) -- (0.5,1,0.5);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.25,0.75) -- (1,0,1);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.25,0.75) -- (0.5,0,0.5);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.25,0.75) -- (1,0.5,0.5);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.25,0.75) -- (0.5,0.5,1);
+    \draw[gray!50!black, line width=0.7pt] (0.25,0.75,0.75) -- (0,1,1);
+    \draw[gray!50!black, line width=0.7pt] (0.25,0.75,0.75) -- (0,0.5,0.5);
+    \draw[gray!50!black, line width=0.7pt] (0.25,0.75,0.75) -- (0.5,1,0.5);
+    \draw[gray!50!black, line width=0.7pt] (0.25,0.75,0.75) -- (0.5,0.5,1);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.75) -- (1,1,1);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.75) -- (0.5,0.5,1);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.75) -- (1,0.5,1);
+    \draw[gray!50!black, line width=0.7pt] (0.75,0.75,0.75) -- (0.5,1,1);
+    % C 原子：后半浅灰、前半黑
+    \cellatom{gray!65}{0}{1}{0}{0.30}
+    \cellatom{gray!65}{1}{1}{1}{0.30}
+    \cellatom{gray!65}{0}{1}{1}{0.30}
+    \cellatom{gray!65}{1}{1}{0}{0.30}
+    \cellatom{gray!65}{0.5}{1}{0.5}{0.30}
+    \cellatom{gray!65}{0.5}{0.5}{1}{0.30}
+    \cellatom{gray!65}{0.75}{0.75}{0.25}{0.30}
+    \cellatom{gray!65}{0.75}{0.25}{0.75}{0.30}
+    \cellatom{gray!65}{0.25}{0.75}{0.75}{0.30}
+    \cellatom{gray!65}{0.75}{0.75}{0.75}{0.30}
+    \cellatom{black!80}{0}{0}{0}{0.30}
+    \cellatom{black!80}{1}{0}{0}{0.30}
+    \cellatom{black!80}{0}{0}{1}{0.30}
+    \cellatom{black!80}{1}{0}{1}{0.30}
+    \cellatom{black!70}{0.5}{0}{0.5}{0.30}
+    \cellatom{black!70}{0.5}{0.5}{0}{0.30}
+    % 红四面体顶点 C（红）
+    \cellatom{red!80!black}{0.25}{0.25}{0.25}{0.33}
+\end{tikzpicture}

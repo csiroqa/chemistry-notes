@@ -49,13 +49,23 @@
 \newlist{datas}{itemize}{2}
 \setlist[datas]{label=\textbullet, leftmargin=1em, itemsep=2pt, topsep=3pt, parsep=0pt}
 
-% 晶胞示意图：居中插图 + 灰色小注（PDF 由 figures/crystal_gen.wl 生成）
+% 晶胞示意图：居中 TikZ 线框图 + 灰色小注（仿手稿线框风格，figures/crystal/*.tikz）
 \newcommand{\cellfig}[2]{%
     \begin{center}
-        \includegraphics[width=0.30\textwidth]{figures/crystal/#1.pdf}%
-        \\[3pt]
+        \input{figures/crystal/#1.tikz}%
+        \par\vspace{3pt}%
         \footnotesize\textcolor{gray}{#2}%
     \end{center}%
+}
+
+% ===== 晶胞图形形式化：正等测投影 + 渐变球（描图教材/PPT 图）=====
+% 统一等测坐标（与各 *.tikz 中的 x/y/z 向量一致）：
+%   x=(2.26cm,1.30cm), y=(-2.26cm,1.30cm), z=(0cm,2.60cm)
+% \cellatom{颜色}{x}{y}{z}{半径cm}：在 3D 坐标位置绘制真圆渐变球
+%   （node 的位置随坐标变换、尺寸不变形，实现"等测投影的真圆球"）
+\newcommand{\cellatom}[5]{%
+    \node[circle, shading=ball, ball color=#1, inner sep=0pt,
+          minimum size={2*#5 cm}] at ({#2},{#3},{#4}) {};%
 }
 
 

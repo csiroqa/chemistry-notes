@@ -1,0 +1,29 @@
+% 六方最密堆积（描图 PPT slide32 骨架图）：六方柱线框 + 银灰点球（A/B 层），6 个/晶胞
+\begin{tikzpicture}[
+    x={(2.26cm,1.30cm)}, y={(-2.26cm,1.30cm)}, z={(0cm,2.60cm)},
+    line width=0.9pt,
+]
+    \pgfmathsetmacro{\cH}{1.633}
+    \draw[blue!40!black, line width=0.7pt]
+        ({cos(0)},{sin(0)},0) -- ({cos(60)},{sin(60)},0) -- ({cos(120)},{sin(120)},0)
+        -- ({cos(180)},{sin(180)},0) -- ({cos(240)},{sin(240)},0) -- ({cos(300)},{sin(300)},0)
+        -- ({cos(0)},{sin(0)},0);
+    \draw[blue!40!black, line width=0.7pt]
+        ({cos(0)},{sin(0)},\cH) -- ({cos(60)},{sin(60)},\cH) -- ({cos(120)},{sin(120)},\cH)
+        -- ({cos(180)},{sin(180)},\cH) -- ({cos(240)},{sin(240)},\cH) -- ({cos(300)},{sin(300)},\cH)
+        -- ({cos(0)},{sin(0)},\cH);
+    \foreach \k in {0,...,5} {
+        \draw[blue!40!black, line width=0.7pt] ({cos(\k*60)},{sin(\k*60)},0) -- ({cos(\k*60)},{sin(\k*60)},\cH);
+    }
+    % A 层（底 6 角 + 中心；顶 6 角 + 中心）
+    \foreach \k in {0,...,5} {
+        \cellatom{gray!60}{cos(\k*60)}{sin(\k*60)}{0}{0.24}
+        \cellatom{gray!60}{cos(\k*60)}{sin(\k*60)}{\cH}{0.24}
+    }
+    \cellatom{gray!60}{0}{0}{0}{0.24}
+    \cellatom{gray!60}{0}{0}{\cH}{0.24}
+    % B 层（3 个内部原子）
+    \cellatom{gray!50}{0.5}{0.2887}{\cH/2}{0.24}
+    \cellatom{gray!50}{-0.5}{0.2887}{\cH/2}{0.24}
+    \cellatom{gray!50}{0}{-0.5774}{\cH/2}{0.24}
+\end{tikzpicture}

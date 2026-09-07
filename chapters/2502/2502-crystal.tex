@@ -248,10 +248,29 @@
         \end{tabular}
         \end{center}
 
-        \cellfig{share-corner}{顶角（顶点）原子：被 8 个晶胞共用（\(1/8\)）}
-        \cellfig{share-edge}{棱上原子：被 4 个晶胞共用（\(1/4\)）}
-        \cellfig{share-face}{面上（面心）原子：被 2 个晶胞共用（\(1/2\)）}
-        \cellfig{share-body}{内部（体心）原子：完全属于该晶胞（\(1\)）}
+        % 四种位置（仿手稿线框示意图，每格一个 minipage）
+        \noindent
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \input{figures/crystal/share-corner.tikz}\\[2pt]
+            \footnotesize\textcolor{gray}{顶角：被 8 个晶胞共用（\(1/8\)）}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \input{figures/crystal/share-edge.tikz}\\[2pt]
+            \footnotesize\textcolor{gray}{棱上：被 4 个晶胞共用（\(1/4\)）}
+        \end{minipage}\\[6pt]
+        \noindent
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \input{figures/crystal/share-face.tikz}\\[2pt]
+            \footnotesize\textcolor{gray}{面上（面心）：被 2 个晶胞共用（\(1/2\)）}
+        \end{minipage}\hfill
+        \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \input{figures/crystal/share-body.tikz}\\[2pt]
+            \footnotesize\textcolor{gray}{内部（体心）：完全属于该晶胞（\(1\)）}
+        \end{minipage}
 
         \textcolor{blue}{以上适用于平行六面体晶胞。}
 
@@ -309,7 +328,7 @@
 
             \subsubsection{\texorpdfstring{\cemh{NaCl}}{NaCl} 晶体}
 
-                \cellfig{cell-na-cl}{\textcolor{green!55!black}{\cemh{Cl-}}（绿）与 \textcolor{violet!65!black}{\cemh{Na+}}（紫）}
+                \cellfig{cell-na-cl}{\textcolor{green!50!black}{\cemh{Cl-}}（绿）与 \textcolor{violet!60!black}{\cemh{Na+}}（紫）}
 
                 \Circled{1} 晶胞中含 \cemh{Na+} 4 个，\cemh{Cl-} 4 个；
 
@@ -327,7 +346,7 @@
 
             \subsubsection{\texorpdfstring{\cemh{CsCl}}{CsCl} 晶体}
 
-                \cellfig{cell-cs-cl}{\textcolor{blue!60!black}{\cemh{Cs+}}（蓝）与 \textcolor{green!55!black}{\cemh{Cl-}}（绿）}
+                \cellfig{cell-cs-cl}{\textcolor{pink!70!red}{\cemh{Cs+}}（粉）与 \textcolor{green!50!black}{\cemh{Cl-}}（绿）}
 
                 \Circled{1} 晶胞中含 \cemh{Cs+} 1 个，\cemh{Cl-} 1 个；
 
@@ -341,7 +360,7 @@
 
             \subsubsection{\texorpdfstring{\cemh{CaF2}}{CaF2} 晶体}
 
-                \cellfig{cell-ca-f2}{\textcolor{green!60!black}{\cemh{Ca^{2+}}}（绿）与 \textcolor{blue!70!black}{\cemh{F-}}（蓝）}
+                \cellfig{cell-ca-f2}{\textcolor{green!50!black}{\cemh{Ca^{2+}}}（绿）与 \textcolor{blue!60!black}{\cemh{F-}}（蓝）}
 
                 \Circled{1} 晶胞中含 \cemh{Ca^{2+}} 4 个，\cemh{F-} 8 个；
 
@@ -355,7 +374,7 @@
 
             \subsubsection{\texorpdfstring{\cemh{ZnS}}{ZnS} 晶体}
 
-                \cellfig{cell-zns}{\textcolor{orange!80!black}{\cemh{S^{2-}}}（黄）与 \textcolor{gray}{\cemh{Zn^{2+}}}（灰），\cemh{Zn^{2+}} 位于 \cemh{S^{2-}} 四面体空隙}
+                \cellfig{cell-zns}{\textcolor{yellow!60!orange}{\cemh{S^{2-}}}（黄）与 \textcolor{gray!40!black}{\cemh{Zn^{2+}}}（灰黑），\cemh{Zn^{2+}} 位于 \cemh{S^{2-}} 四面体空隙}
 
                 \Circled{1} 晶胞中含 \cemh{Zn^{2+}} 4 个，\cemh{S^{2-}} 4 个；
 
@@ -389,7 +408,7 @@
                     \[
                         \rho = \frac{m}{V}
                         = \frac{\dfrac{M(\cemh{NaCl})}{N_\text{A}} \times \text{个数}}
-                        {\left[2(r(\cemh{Na+}) + r(\cemh{Cl-}))\right]^3}
+                        {\left(2(r(\cemh{Na+}) + r(\cemh{Cl-}))\right)^3}
                         = \SI{2.17}{\g\per\cubic\cm}
                     \]
                 \end{xmp}
@@ -421,7 +440,7 @@
                 \hfill
                 \begin{minipage}[t]{0.35\textwidth}
                     \centering
-                    \includegraphics[width=0.95\linewidth]{figures/crystal/cell-diamond.pdf}
+                    \input{figures/crystal/cell-diamond.tikz}
                 \end{minipage}
 
             \subsubsection{金刚石模型演变}

@@ -1,0 +1,39 @@
+% NaCl 晶胞（描图 PPT slide33）：绿 Cl⁻（角+面心）、紫 Na⁺（棱中+体心）、黑线框
+\begin{tikzpicture}[
+    x={(2.26cm,1.30cm)}, y={(-2.26cm,1.30cm)}, z={(0cm,2.60cm)},
+    line width=0.9pt,
+]
+    \draw (0,0,1) -- (1,0,1) -- (1,1,1) -- (0,1,1) -- cycle;
+    \draw (0,0,0) -- (0,0,1) (1,0,0) -- (1,0,1) (0,1,0) -- (0,1,1);
+    \draw (0,0,0) -- (1,0,0) (0,0,0) -- (0,1,0);
+    \draw[dashed] (1,0,0) -- (1,1,0) (0,1,0) -- (1,1,0) (1,1,0) -- (1,1,1);
+    % Cl⁻（绿，稍大事先——后层浅绿）
+    \cellatom{green!45!black}{0}{0}{0}{0.46}
+    \cellatom{green!45!black}{1}{0}{0}{0.46}
+    \cellatom{green!60!white}{0}{1}{0}{0.46}
+    \cellatom{green!60!white}{1}{1}{0}{0.46}
+    \cellatom{green!45!black}{0}{0}{1}{0.46}
+    \cellatom{green!45!black}{1}{0}{1}{0.46}
+    \cellatom{green!60!white}{0}{1}{1}{0.46}
+    \cellatom{green!60!white}{1}{1}{1}{0.46}
+    \cellatom{green!45!black}{0.5}{0.5}{0}{0.46}
+    \cellatom{green!60!white}{0.5}{0.5}{1}{0.46}
+    \cellatom{green!45!black}{0.5}{0}{0.5}{0.46}
+    \cellatom{green!60!white}{0}{0.5}{0.5}{0.46}
+    \cellatom{green!45!black}{1}{0.5}{0.5}{0.46}
+    \cellatom{green!60!white}{0.5}{1}{0.5}{0.46}
+    % Na⁺（紫，较深/浅分层）
+    \cellatom{violet!55!black}{0.5}{0.5}{0.5}{0.28}
+    \cellatom{violet!55!black}{0.5}{0}{0}{0.28}
+    \cellatom{violet!55!black}{1}{0.5}{0}{0.28}
+    \cellatom{violet!70!white}{0}{0.5}{0}{0.28}
+    \cellatom{violet!70!white}{0.5}{1}{0}{0.28}
+    \cellatom{violet!55!black}{0.5}{0}{1}{0.28}
+    \cellatom{violet!70!white}{1}{0.5}{1}{0.28}
+    \cellatom{violet!70!white}{0}{0.5}{1}{0.28}
+    \cellatom{violet!55!black}{0.5}{1}{1}{0.28}
+    \cellatom{violet!55!black}{0}{0}{0.5}{0.28}
+    \cellatom{violet!55!black}{1}{0}{0.5}{0.28}
+    \cellatom{violet!70!white}{0}{1}{0.5}{0.28}
+    \cellatom{violet!70!white}{1}{1}{0.5}{0.28}
+\end{tikzpicture}
