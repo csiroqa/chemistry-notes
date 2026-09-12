@@ -2,6 +2,15 @@
 
 ## 内容结构
 
+### 前置部分（`frontmatter/`）
+
+| 篇 | 内容 | 文件 |
+| --- | --- | --- |
+| 序 | 文言序（含小字题识），不编号章，入目录 | `preface.tex` |
+
+序用 `\input` 引入（非 `\include`）：`main.tex` 的 `\includeonly` 白名单会**静默跳过**未列出的 `\include`，序因此曾整篇不入 PDF。序无 `\label`，不需要独立 `.aux`，`\input` 足够。
+`\frontmatter` 置于 `\tableofcontents` 之前，故序与目录用罗马数字页码，正文起于阿拉伯数字 1。
+
 ### 二〇二五学年第一学期（`chapters/2501/`）
 
 | 章   | 内容                                                         | 文件                        |
@@ -99,7 +108,9 @@ latexmk -lualatex -synctex=1 -outdir=TexMP main.tex
 
 ```tree
 .
-├── main.tex              # 主入口，两学期 part 结构
+├── main.tex              # 主入口，前置＋两学期 part 结构
+├── frontmatter/
+│   └── preface.tex        # 序（文言，含小字题识；\input 引入）
 ├── preamble.tex           # 前导（宏包加载、自定义命令、打印版开关）
 ├── liTemElegXv2.4.sty     # 主样式宏包（当前采用）
 ├── LuaTemElegX.sty        # LuaLaTeX 字体配置（当前采用；xeTemElegX/pTemElegX 为旧版）
@@ -112,6 +123,10 @@ latexmk -lualatex -synctex=1 -outdir=TexMP main.tex
 │   └── 2502/              # 第二学期各节（晶体＋电化学）
 ├── appendix/              # 附录（A 周期表、B 常用数据、C 知识清单、D 公式清单）
 ├── figures/               # 插图源（crystal/ 晶胞 PDF；electrochem/ 电化学装置 TikZ）
+├── tools/                 # 脚本工具集（自解析路径，见 tools/README.md）
+│   ├── notes_img/         # 手写笔记照片 → AI 识图就绪图片（主脚本 + qc/ + archive/）
+│   ├── ppt/               # PPT/PPTX → 图片 + 文本 Markdown
+│   └── tex/               # LaTeX 文稿生成脚本
 ├── 2501notes/             # 第一学期手写扫描 PDF 源
 ├── 2502notes/             # 第二学期手写扫描 PDF 源
 ├── .book/                 # 人教版教科书 PDF（参考）
@@ -120,6 +135,19 @@ latexmk -lualatex -synctex=1 -outdir=TexMP main.tex
 ├── printmode.txt          # （可选）存在时输出打印版（链接颜色隐藏）
 └── TexMP/                 # 编译输出目录（main.pdf、aux、synctex 等）
 ```
+
+## 脚本工具
+
+正文之外的一切脚本都在 `tools/` 下（曾经散落在仓库根），详见 [`tools/README.md`](tools/README.md)：
+
+| 工具 | 命令（在仓库根执行） |
+| --- | --- |
+| 笔记照片 → AI 识图就绪图（**主力脚本**） | `python tools/notes_img/notes_ai_crop.py --only-new` |
+| 管线 QC（量化/验收/预览） | `python tools/notes_img/qc/_qc_gen.py it32 --core` 等 |
+| PPT → 图片 + 文本 Markdown | `python tools/ppt/ppt_to_ai_ready.py` |
+
+脚本一律**自解析仓库根**（不硬编码机器路径，也不依赖当前工作目录），
+数据目录（`notes.zz/`、`notes.zz.ai/`、`_qc/`）留在仓库根且不入库。
 
 ## 输出
 

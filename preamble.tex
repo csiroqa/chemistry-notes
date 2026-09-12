@@ -16,6 +16,7 @@
 \usepackage{xltabular}   % 附录 tabularx 型表格跨页
 \usepackage{rotating}    % 附录 A 周期表横向图旋转占满竖向 A4
 \usepackage{pdflscape}   % 附录 A 周期表横向整页
+\usepackage{zhnumber}    % 凡例条目序号（中文数字）
 \usetikzlibrary{positioning}  % 单线桥/电化学示意图（figures/electrochem）
 % —— 打印版开关 ——
 % 电子版（默认）：PDF 保留红/蓝超链接颜色；
@@ -26,9 +27,9 @@
     \hypersetup{hidelinks}
 \fi
 \hypersetup{ %
-    pdftitle = {} , % PDFのタイトル
-    pdfauthor = {} , % PDFの作成者
-    pdfsubject = {上海市进才中学化学笔记},    % 主題
+    pdftitle = {RĪVULĪ CHEMICĪ} , % PDFのタイトル
+    pdfauthor = {本书编写组} , % PDFの作成者
+    pdfsubject = {NŌBĪS ELEMENTĪS DĒRĪVANDUM EST},    % 主題
     pdfkeywords = {Chemistry, notes, senior middle school, Shanghai},  %関鍵詞
     pdfcreator  = {LuaHBTeX with hyperref},    %工具
     pdflang = {zh}
@@ -68,7 +69,9 @@
           minimum size={2*#5 cm}] at ({#2},{#3},{#4}) {};%
 }
 
+\fancyfoot[RE]{~\textit{Rīvulī chemicī}~}% 在奇数页的左侧，偶数页的右侧显示书名
+\fancyfoot[LO]{~\textit{Nōbīs elementīs dērīvandum est}~}% 在奇数页的左侧，偶数页的右侧显示书名
 
-\title{化学笔记}
-\author{}
+\title{RĪVULĪ CHEMICĪ}
+\author{本书编写组}
 \date{\today}

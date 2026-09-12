@@ -9,10 +9,25 @@
 
 \begin{document}
     \maketitle
-    \tableofcontents
+    \frontmatter                 % 序＋目录用罗马数字页码，正文起于阿拉伯数字 1
+
+    % 序在 \includeonly 白名单之外，故用 \input：
+    \input{frontmatter/preface}
+
+    % 凡例与序同级，紧随其后
+    \input{frontmatter/conventions}
 
     \cleardoublepage
-    \part{二〇二五学年第一学期}
+    \tableofcontents
+
+    \mainmatter
+
+    \cleardoublepage
+    % 元级标题为双语：中英分行，两行皆原字号（\small 已撤）。
+    % 实测：英文串宽 190.0pt，正文列宽 392.6pt，富余 202pt，不需缩号。
+    % \texorpdfstring 把排版命令（\\）与双语全文挡在 PDF 书签之外，
+    % 书签只取中文短语，免得书签面板里塞满两行。
+    \part{\texorpdfstring{二〇二五学年第一学期 \\First Semester, Academic Year 2025}{二〇二五学年第一学期 First Semester, Academic Year 2025}}
 
     本学期在 \nameref{chap:水溶液中的平衡} 体系中具体补充建立化学平衡的完整认知框架。首先在 \nameref{sect:3.0基础知识复习} 中复习电解质与非电解质、强弱电解质等基本概念（\nameref{tab:弱酸-课本3.3} 列举了常见弱酸弱碱的电离平衡常数数据），在此基础上进入 \nameref{sect:水的电离和溶液酸碱性}，认识水的电离平衡与溶液的酸碱性，引入水的离子积 \(K_\text{W}\) 与 pH 的计算体系（包括 \nameref{subsec:测量pH的方法}、\nameref{subsec:有关pH的计算} 和 \nameref{subsec:水电离出的[H+]和[OH^-]}）。随后进入 \nameref{sect:弱电解质的电离平衡}，建立 \nameref{subsec:电离度} \(\alpha\) 与 \nameref{subsec:电离常数} \(K_\text{i}\) 的定量分析方法，并结合近似处理与计算技巧，培养解决实际问题的能力。进而探讨 \nameref{sect:盐类水解} 的 \nameref{subsec:盐类水解的原理}、\nameref{subsec:盐类水解的规律} 与 \nameref{subsubsec:水解常数}，加深对溶液中微粒行为的理解，并设 \nameref{sect:专题——溶液中的微粒浓度比较} 系统归纳溶液中微粒浓度比较的三大守恒方法。转而进入 \nameref{sect:酸碱滴定} 的实践操作，涵盖 \nameref{subsec:中和滴定的原理}、\nameref{subsec:实验仪器}（\nameref{subsubsec:滴定管}）、\nameref{subsec:滴定过程} 与 \nameref{subsec:指示剂选择与滴定过程中的颜色变化}（参见 \nameref{fig:titration_indicators_2501}），并拓展至 \nameref{subsec:滴定典型案例分析} 与 \nameref{subsec:拓展：氧化还原滴定}（\nameref{subsubsec:高锰酸钾法氧化还原滴定}、\nameref{subsubsec:碘量法氧化还原滴定}），强调实验设计与结果解读。此后讨论 \nameref{sect:沉淀溶解平衡}，以 \nameref{subsec:溶度积常数}（\nameref{subsubsec:Ksp意义和影响因素}、\nameref{subsubsec:溶度积规则}）为核心，分析 \nameref{subsec:沉淀溶解平衡的移动}（\nameref{subsubsec:沉淀的转化}、\nameref{subsubsec:沉淀的溶解}），进而理解共离子效应、络合反应与沉淀溶解在实际问题中的应用。
     
@@ -22,7 +37,7 @@
     \include{chapters/2501}
 
     \cleardoublepage
-    \part{二〇二五学年第二学期}
+    \part{\texorpdfstring{二〇二五学年第二学期 \\Second Semester, Academic Year 2025}{二〇二五学年第二学期 Second Semester, Academic Year 2025}}
 
     本学期首先完成有机化学基础的后半部分学习，系统认识各类有机物的结构、命名、同分异构与典型反应。通过学习取代反应、加成反应、消除反应与加聚反应，掌握有机反应的基本类型与规律，并理解常见高分子、天然有机物与生活材料的化学特征。
     
@@ -34,7 +49,7 @@
     \include{chapters/2502}
 
     \cleardoublepage
-    \part{附录}
+    \part{附录　Appendices}
     \appendix
 
     \include{appendix/appendix-periodic}
